@@ -6,6 +6,7 @@
 (function () {
   const pt = BITACORA_DATA.langs.pt.modules;
   const fr = BITACORA_DATA.langs.fr.modules;
+  const de = BITACORA_DATA.langs.de.modules;
 
   /* ============================================================ */
   /* MÓDULO 2 — Coger el transporte                                */
