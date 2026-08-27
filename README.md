@@ -1,8 +1,9 @@
 # Bitácora
 
 App personal e instalable, **100% offline** una vez instalada, para aprender
-**portugués de Portugal** y **francés de Francia** partiendo de español. Sin
-publicidad, sin cuentas, sin servidor: tu progreso vive solo en tu móvil.
+**portugués de Portugal**, **francés de Francia** y **alemán**, partiendo de
+español. Sin publicidad, sin cuentas, sin servidor: tu progreso vive solo en
+tu móvil.
 
 Nace porque no hay (que hayamos encontrado) una alternativa gratuita que
 enseñe específicamente las variantes de Portugal y Francia, con datos
@@ -28,14 +29,15 @@ móvil con una app como *Servers Ultra* (Android) y abre `http://localhost:PUERT
 
 ## Qué incluye
 
-- **5 módulos** por idioma, dificultad creciente: saludos y números →
-  transporte → direcciones → conocer gente → entrevista de trabajo (registro
-  formal). Diálogos reales, sin frases absurdas de relleno.
+- **5 módulos** en portugués y francés (saludos y números → transporte →
+  direcciones → conocer gente → entrevista de trabajo), y **1 módulo** en
+  alemán por ahora (saludos y números), ampliable con el tiempo. Diálogos
+  reales, sin frases absurdas de relleno.
 - **Diccionario de frecuencia**: las 3000 palabras más usadas de cada
   idioma, con pronunciación IPA, buscable. Ver de dónde sale cada dato en
-  CREDITS.md — francés con IPA real de un diccionario abierto; portugués
-  generado con un fonemizador especializado en el dialecto de Portugal, a
-  falta de un dataset abierto equivalente.
+  CREDITS.md — francés y alemán con IPA real de un diccionario abierto;
+  portugués generado con un fonemizador especializado en el dialecto de
+  Portugal, a falta de un dataset abierto equivalente.
 - **Repetición espaciada real (SM-2)**, ahora global: mezcla tarjetas de
   todos los módulos que ya tocaste, no solo del que tienes abierto.
 - **Ejercicios de completar frases** (cloze) con palabras de alta frecuencia,
@@ -45,7 +47,7 @@ móvil con una app como *Servers Ultra* (Android) y abre `http://localhost:PUERT
   esto es una herramienta para aprender, no un juego.
 - **Falsos amigos** español↔idioma en cada módulo (embarazada/embaraçada,
   nombre/nombre, largo/large...).
-- **Un dato curioso** de Portugal o Francia cada 2 días de racha.
+- **Un dato curioso** de Portugal, Francia o Alemania cada 2 días de racha.
 - Audio con la voz que ya trae tu propio móvil instalada, y grabarte a ti
   mismo para comparar tu pronunciación con la nativa.
 

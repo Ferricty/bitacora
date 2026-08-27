@@ -40,5 +40,25 @@ const BITACORA_FACTS = {
       "La Estatua de la Libertad fue un regalo del pueblo francés a los Estados Unidos para conmemorar el centenario de su independencia en 1876.",
       "El ejército francés fue el primero del mundo en crear una unidad dedicada exclusivamente al camuflaje durante la Primera Guerra Mundial (1915)."
     ]
+  },
+  de: {
+    country: "Alemania", flag: "🇩🇪",
+    items: [
+      "Alemania es el país con más premios Nobel de origen no anglosajón, especialmente en ciencias.",
+      "El alemán tiene palabras compuestas casi ilimitadas: se pueden unir sustantivos para crear una sola palabra nueva y muy larga.",
+      "La Selva Negra (Schwarzwald), en el suroeste de Alemania, da nombre al pastel Selva Negra y es cuna del cucú de madera.",
+      "El Muro de Berlín cayó el 9 de noviembre de 1989, tras casi 30 años dividiendo la ciudad en dos.",
+      "Alemania tiene más de 1.500 tipos distintos de salchicha (Wurst) documentados.",
+      "El Oktoberfest de Múnich, la fiesta de la cerveza más famosa del mundo, se celebra desde 1810.",
+      "La autopista alemana (Autobahn) es célebre por no tener límite de velocidad en muchos tramos.",
+      "Alemania es el mayor productor de automóviles de Europa, con marcas como Volkswagen, BMW y Mercedes-Benz.",
+      "El castillo de Neuschwanstein, en Baviera, inspiró el diseño del castillo de la Cenicienta de Disney.",
+      "Alemania tiene más de 400 zoológicos, la mayor densidad de zoológicos de cualquier país del mundo.",
+      "La imprenta de tipos móviles, inventada por Johannes Gutenberg en Maguncia hacia 1440, cambió para siempre la difusión del conocimiento.",
+      "El alemán es la lengua materna más hablada de la Unión Europea, por encima del francés y el italiano.",
+      "Berlín tiene más puentes que Venecia: más de 900 repartidos por la ciudad.",
+      "El árbol de Navidad decorado en casa, tal como se conoce hoy, es una tradición que se popularizó en Alemania.",
+      "Alemania fue el primer país del mundo en implantar un sistema público de seguridad social, en la década de 1880."
+    ]
   }
 };

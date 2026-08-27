@@ -4213,5 +4213,1041 @@ fr.push({
       { es: "succès", esMeaning: "éxito", target: "succès", targetMeaning: "éxito o logro (no un suceso acontecido)" }
     ]
   });
+
+ 
+  /* ============================================================ */
+  /* MÓDULO 2 — Öffentliche Verkehrsmittel                         */
+  /* ============================================================ */
+  de.push({
+    id: "de-m2", num: 2, title: "Öffentliche Verkehrsmittel", subtitle: "Transporte público",
+    cards: [
+      { id: "de-m2-c01", es: "el autobús", target: "der Bus", phon: "der bus" },
+      { id: "de-m2-c02", es: "la parada", target: "die Haltestelle", phon: "di HAL-te-shte-le" },
+      { id: "de-m2-c03", es: "el billete", target: "die Fahrkarte", phon: "di FAR-kar-te" },
+      { id: "de-m2-c04", es: "el metro", target: "die U-Bahn", phon: "di U-ban" },
+      { id: "de-m2-c05", es: "la estación", target: "der Bahnhof", phon: "der BAN-hof" },
+      { id: "de-m2-c06", es: "¿dónde está la parada?", target: "Wo ist die Haltestelle?", phon: "vo ist di HAL-te-shte-le" },
+      { id: "de-m2-c07", es: "¿este autobús va a...?", target: "Fährt dieser Bus nach...?", phon: "fert DI-zer bus naj" },
+      { id: "de-m2-c08", es: "quiero ir a...", target: "Ich möchte nach ... fahren", phon: "ij MÖSH-te naj ... FA-ren" },
+      { id: "de-m2-c09", es: "¿cuánto cuesta el billete?", target: "Was kostet die Fahrkarte?", phon: "vas KOS-tet di FAR-kar-te" },
+      { id: "de-m2-c10", es: "un billete, por favor", target: "Eine Fahrkarte, bitte", phon: "AI-ne FAR-kar-te BI-te" },
+      { id: "de-m2-c11", es: "¿a qué hora sale?", target: "Wann fährt er ab?", phon: "van fert er ap" },
+      { id: "de-m2-c12", es: "¿a qué hora llega?", target: "Wann kommt er an?", phon: "van komt er an" },
+      { id: "de-m2-c13", es: "próxima parada", target: "nächste Haltestelle", phon: "NEsh-te HAL-te-shte-le" },
+      { id: "de-m2-c14", es: "¿está libre este asiento?", target: "Ist dieser Platz frei?", phon: "ist DI-zer plats frai" },
+      { id: "de-m2-c15", es: "con permiso", target: "Entschuldigung", phon: "ent-SHUL-di-gung" },
+      { id: "de-m2-c16", es: "bajarse", target: "aussteigen", phon: "AUS-shtai-guen" },
+      { id: "de-m2-c17", es: "subir (al transporte)", target: "einsteigen", phon: "AIN-shtai-guen" },
+      { id: "de-m2-c18", es: "está lejos", target: "Es ist weit", phon: "es ist vait" },
+      { id: "de-m2-c19", es: "está cerca", target: "Es ist nah", phon: "es ist na" },
+      { id: "de-m2-c20", es: "todo recto", target: "immer geradeaus", phon: "I-mer ge-RA-de-aus" },
+      { id: "de-m2-c21", es: "tarjeta/billete de transporte", target: "das Ticket", phon: "das TI-ket" },
+      { id: "de-m2-c22", es: "ida y vuelta", target: "hin und zurück", phon: "hin unt tsu-RÜK" }
+    ],
+    dialogue: {
+      title: "An der Bushaltestelle", context: "Lena pregunta si el autobús va al centro y compra el billete.",
+      lines: [
+        { who: "Lena", target: "Entschuldigung, fährt dieser Bus zum Zentrum?", es: "Disculpe, ¿este autobús va al centro?" },
+        { who: "Fahrer", target: "Ja, das stimmt. Zwei Euro, bitte.", es: "Sí, así es. Dos euros, por favor." },
+        { who: "Lena", target: "Hier bitte. An welcher Haltestelle muss ich für den Bahnhof aussteigen?", es: "Aquí tiene. ¿En qué parada debo bajar para la estación?" },
+        { who: "Fahrer", target: "Das ist die vierte Haltestelle, ich sage Ihnen Bescheid.", es: "Es la cuarta parada, yo le aviso." },
+        { who: "Lena", target: "Vielen Dank!", es: "¡Muchas gracias!" },
+        { who: "Fahrer", target: "Nächste Haltestelle, das ist Ihre.", es: "Próxima parada, ya es la suya." },
+        { who: "Lena", target: "Entschuldigung, ich steige hier aus.", es: "Con permiso, me bajo aquí." }
+      ],
+      questions: [
+        { q: "¿Cuánto pagó Lena por el billete?", options: ["Un euro", "Dos euros", "Tres euros"], answer: 1 },
+        { q: "¿A dónde va Lena?", options: ["Al aeropuerto", "Al centro", "A la playa"], answer: 1 },
+        { q: "¿Cómo sabe en qué parada bajar?", options: ["Lo ve en un mapa", "El conductor le avisa", "Pregunta a otro pasajero"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m2-cl1", before: "Fährt dieser Bus ", blank: "zum", after: " Zentrum?", es: "¿Este autobús va al centro?", mode: "select", options: ["zum", "zur", "zu", "nach"] },
+      { id: "de-m2-cl2", before: "Was ", blank: "kostet", after: " die Fahrkarte?", es: "¿Cuánto cuesta el billete?", mode: "type" },
+      { id: "de-m2-cl3", before: "Der Bahnhof ist sehr ", blank: "nah", after: ".", es: "La estación está muy cerca.", mode: "select", options: ["nah", "weit", "groß", "früh"] },
+      { id: "de-m2-cl4", before: "Ich steige hier ", blank: "aus", after: ".", es: "Me bajo aquí.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 3 — Nach dem Weg fragen                                 */
+  /* ============================================================ */
+  de.push({
+    id: "de-m3", num: 3, title: "Nach dem Weg fragen", subtitle: "Preguntar direcciones y orientarse en la calle",
+    cards: [
+      { id: "de-m3-c01", es: "disculpe", target: "Entschuldigung", phon: "ent-SHUL-di-gung" },
+      { id: "de-m3-c02", es: "¿dónde está...?", target: "Wo ist...?", phon: "vo ist" },
+      { id: "de-m3-c03", es: "la calle", target: "die Straße", phon: "di SHTRA-se" },
+      { id: "de-m3-c04", es: "la plaza", target: "der Platz", phon: "der plats" },
+      { id: "de-m3-c05", es: "a la derecha", target: "rechts", phon: "rejts" },
+      { id: "de-m3-c06", es: "a la izquierda", target: "links", phon: "links" },
+      { id: "de-m3-c07", es: "todo recto", target: "geradeaus", phon: "ge-RA-de-aus" },
+      { id: "de-m3-c08", es: "cerca de aquí", target: "in der Nähe", phon: "in der NE-e" },
+      { id: "de-m3-c09", es: "lejos de aquí", target: "weit von hier", phon: "vait fon hir" },
+      { id: "de-m3-c10", es: "la esquina", target: "die Ecke", phon: "di E-ke" },
+      { id: "de-m3-c11", es: "el semáforo", target: "die Ampel", phon: "di AM-pel" },
+      { id: "de-m3-c12", es: "cruzar la calle", target: "die Straße überqueren", phon: "di SHTRA-se ü-ber-KVE-ren" },
+      { id: "de-m3-c13", es: "¿me puede ayudar?", target: "Können Sie mir helfen?", phon: "KÖ-nen zi mir HEL-fen" },
+      { id: "de-m3-c14", es: "estoy perdido/a", target: "Ich habe mich verlaufen", phon: "ij HA-be mij fer-LAU-fen" },
+      { id: "de-m3-c15", es: "el mapa", target: "die Karte", phon: "di KAR-te" },
+      { id: "de-m3-c16", es: "girar", target: "abbiegen", phon: "AP-bi-guen" },
+      { id: "de-m3-c17", es: "seguir", target: "weitergehen", phon: "VAI-ter-ge-en" },
+      { id: "de-m3-c18", es: "a pie", target: "zu Fuß", phon: "tsu fus" },
+      { id: "de-m3-c19", es: "¿está lejos a pie?", target: "Ist es weit zu Fuß?", phon: "ist es vait tsu fus" },
+      { id: "de-m3-c20", es: "gracias por su ayuda", target: "Danke für Ihre Hilfe", phon: "DAN-ke für I-re HIL-fe" }
+    ],
+    dialogue: {
+      title: "Auf der Suche nach dem Museum", context: "Tom pregunta a una desconocida cómo llegar al museo.",
+      lines: [
+        { who: "Tom", target: "Entschuldigung, wissen Sie, wo das Museum ist?", es: "Disculpe, ¿sabe dónde está el museo?" },
+        { who: "Frau Schmidt", target: "Ja, gehen Sie hier geradeaus und dann rechts an der Ampel.", es: "Sí, vaya recto por aquí y luego a la derecha en el semáforo." },
+        { who: "Tom", target: "Ist es weit von hier?", es: "¿Está lejos de aquí?" },
+        { who: "Frau Schmidt", target: "Nein, es ist ganz in der Nähe, fünf Minuten zu Fuß.", es: "No, está muy cerca, cinco minutos a pie." },
+        { who: "Tom", target: "Muss ich die Straße überqueren?", es: "¿Debo cruzar la calle?" },
+        { who: "Frau Schmidt", target: "Ja, an der Ecke, und dann sehen Sie es schon.", es: "Sí, en la esquina, y ya lo verá." },
+        { who: "Tom", target: "Vielen Dank für Ihre Hilfe!", es: "¡Muchas gracias por su ayuda!" }
+      ],
+      questions: [
+        { q: "¿Qué debe hacer Tom primero?", options: ["Girar a la izquierda", "Seguir recto", "Tomar el autobús"], answer: 1 },
+        { q: "¿Está lejos el museo?", options: ["Sí, muy lejos", "No, está cerca", "No lo sabe"], answer: 1 },
+        { q: "¿Debe cruzar la calle?", options: ["No", "Sí, en la esquina", "Solo si llueve"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m3-cl1", before: "Gehen Sie hier ", blank: "geradeaus", after: ".", es: "Vaya recto por aquí.", mode: "type" },
+      { id: "de-m3-cl2", before: "Ist es ", blank: "weit", after: " von hier?", es: "¿Está lejos de aquí?", mode: "select", options: ["weit", "nah", "groß", "klein"] },
+      { id: "de-m3-cl3", before: "Danke für Ihre ", blank: "Hilfe", after: ".", es: "Gracias por su ayuda.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 4 — Leute kennenlernen                                  */
+  /* ============================================================ */
+  de.push({
+    id: "de-m4", num: 4, title: "Leute kennenlernen", subtitle: "Charla informal, un poco más compleja",
+    cards: [
+      { id: "de-m4-c01", es: "¿a qué te dedicas?", target: "Was machst du beruflich?", phon: "vas majst du be-RUF-lij" },
+      { id: "de-m4-c02", es: "me gusta...", target: "Ich mag...", phon: "ij mak" },
+      { id: "de-m4-c03", es: "no me gusta...", target: "Ich mag ... nicht", phon: "ij mak ... nijt" },
+      { id: "de-m4-c04", es: "mi hobby es...", target: "Mein Hobby ist...", phon: "main HO-bi ist" },
+      { id: "de-m4-c05", es: "¿tienes hermanos?", target: "Hast du Geschwister?", phon: "hast du ge-SHVIS-ter" },
+      { id: "de-m4-c06", es: "tengo dos hermanos", target: "Ich habe zwei Geschwister", phon: "ij HA-be tsvai ge-SHVIS-ter" },
+      { id: "de-m4-c07", es: "estoy casado/a", target: "Ich bin verheiratet", phon: "ij bin fer-HAI-ra-tet" },
+      { id: "de-m4-c08", es: "estoy soltero/a", target: "Ich bin ledig", phon: "ij bin LE-dij" },
+      { id: "de-m4-c09", es: "tengo novio/a", target: "Ich habe einen Freund / eine Freundin", phon: "ij HA-be AI-nen froint" },
+      { id: "de-m4-c10", es: "¿en qué trabajas?", target: "Wo arbeitest du?", phon: "vo AR-bai-test du" },
+      { id: "de-m4-c11", es: "vivo en...", target: "Ich wohne in...", phon: "ij VO-ne in" },
+      { id: "de-m4-c12", es: "¿hace cuánto vives aquí?", target: "Seit wann wohnst du hier?", phon: "zait van vonst du hir" },
+      { id: "de-m4-c13", es: "me encanta viajar", target: "Ich reise sehr gern", phon: "ij RAI-ze zer guern" },
+      { id: "de-m4-c14", es: "¿qué idiomas hablas?", target: "Welche Sprachen sprichst du?", phon: "VEL-je SHPRA-jen shprijst du" },
+      { id: "de-m4-c15", es: "hablo un poco de alemán", target: "Ich spreche ein bisschen Deutsch", phon: "ij SHPRE-je ain BIS-jen doitsh" },
+      { id: "de-m4-c16", es: "nos vemos pronto", target: "Bis bald", phon: "bis balt" },
+      { id: "de-m4-c17", es: "mantente en contacto", target: "Bleib in Kontakt", phon: "blaip in kon-TAKT" },
+      { id: "de-m4-c18", es: "¿puedo tener tu número?", target: "Kann ich deine Nummer haben?", phon: "kan ij DAI-ne NU-mer HA-ben" },
+      { id: "de-m4-c19", es: "claro, aquí tienes", target: "Klar, hier ist sie", phon: "klar hir ist zi" },
+      { id: "de-m4-c20", es: "fue un placer conocerte", target: "Es war schön, dich kennenzulernen", phon: "es var shön dij KE-nen-tsu-ler-nen" }
+    ],
+    dialogue: {
+      title: "Auf einer Party", context: "Julia y Max se conocen en una fiesta y hablan de trabajo y aficiones.",
+      lines: [
+        { who: "Julia", target: "Hallo, ich bin Julia. Wir kennen uns noch nicht, oder?", es: "Hola, soy Julia. No nos conocemos todavía, ¿verdad?" },
+        { who: "Max", target: "Nein, ich bin Max. Freut mich! Was machst du beruflich?", es: "No, soy Max. ¡Encantado! ¿A qué te dedicas?" },
+        { who: "Julia", target: "Ich bin Designerin. Und du?", es: "Soy diseñadora. ¿Y tú?" },
+        { who: "Max", target: "Ich arbeite als Programmierer. Was sind deine Hobbys?", es: "Trabajo como programador. ¿Cuáles son tus aficiones?" },
+        { who: "Julia", target: "Ich reise sehr gern und ich mag Fotografie. Und du?", es: "Me encanta viajar y me gusta la fotografía. ¿Y tú?" },
+        { who: "Max", target: "Ich spiele gern Fußball. Kann ich deine Nummer haben?", es: "Me gusta jugar al fútbol. ¿Puedo tener tu número?" },
+        { who: "Julia", target: "Klar, hier ist sie. Bleib in Kontakt!", es: "Claro, aquí tienes. ¡Mantente en contacto!" }
+      ],
+      questions: [
+        { q: "¿A qué se dedica Julia?", options: ["Programadora", "Diseñadora", "Profesora"], answer: 1 },
+        { q: "¿Cuál es el hobby de Max?", options: ["La fotografía", "Viajar", "El fútbol"], answer: 2 },
+        { q: "¿Qué le pide Max a Julia?", options: ["Su dirección", "Su número de teléfono", "Su correo"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m4-cl1", before: "Was ", blank: "machst", after: " du beruflich?", es: "¿A qué te dedicas?", mode: "select", options: ["machst", "macht", "mache", "machen"] },
+      { id: "de-m4-cl2", before: "Ich reise sehr ", blank: "gern", after: ".", es: "Me encanta viajar.", mode: "type" },
+      { id: "de-m4-cl3", before: "Kann ich deine ", blank: "Nummer", after: " haben?", es: "¿Puedo tener tu número?", mode: "type" }
+    ],
+    falseFriends: [
+      { es: "rata (animal)", esMeaning: "animal roedor", target: "Rat", targetMeaning: "consejo (el animal se dice «Ratte»)" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 5 — Vorstellungsgespräch                                */
+  /* ============================================================ */
+  de.push({
+    id: "de-m5", num: 5, title: "Vorstellungsgespräch", subtitle: "Entrevista de trabajo, registro formal",
+    cards: [
+      { id: "de-m5-c01", es: "el currículum", target: "der Lebenslauf", phon: "der LE-bens-lauf" },
+      { id: "de-m5-c02", es: "la experiencia laboral", target: "die Berufserfahrung", phon: "di be-RUFS-er-fa-rung" },
+      { id: "de-m5-c03", es: "¿por qué quiere este puesto?", target: "Warum wollen Sie diese Stelle?", phon: "va-RUM VO-len zi DI-ze SHTE-le" },
+      { id: "de-m5-c04", es: "mis fortalezas son...", target: "Meine Stärken sind...", phon: "MAI-ne SHTER-ken zint" },
+      { id: "de-m5-c05", es: "mis debilidades son...", target: "Meine Schwächen sind...", phon: "MAI-ne SHVE-jen zint" },
+      { id: "de-m5-c06", es: "el salario", target: "das Gehalt", phon: "das ge-HALT" },
+      { id: "de-m5-c07", es: "¿cuál es el horario?", target: "Wie sind die Arbeitszeiten?", phon: "vi zint di AR-baits-tsai-ten" },
+      { id: "de-m5-c08", es: "el contrato", target: "der Vertrag", phon: "der fer-TRAK" },
+      { id: "de-m5-c09", es: "a tiempo completo", target: "Vollzeit", phon: "FOL-tsait" },
+      { id: "de-m5-c10", es: "a tiempo parcial", target: "Teilzeit", phon: "TAIL-tsait" },
+      { id: "de-m5-c11", es: "disponibilidad", target: "Verfügbarkeit", phon: "fer-FÜK-bar-kait" },
+      { id: "de-m5-c12", es: "referencias", target: "Referenzen", phon: "re-fe-REN-tsen" },
+      { id: "de-m5-c13", es: "estoy muy interesado/a", target: "Ich bin sehr interessiert", phon: "ij bin zer in-te-re-SIRT" },
+      { id: "de-m5-c14", es: "¿cuándo puedo empezar?", target: "Wann kann ich anfangen?", phon: "van kan ij AN-fan-guen" },
+      { id: "de-m5-c15", es: "gracias por la oportunidad", target: "Danke für die Gelegenheit", phon: "DAN-ke für di ge-LE-guen-hait" },
+      { id: "de-m5-c16", es: "trabajo en equipo", target: "die Teamarbeit", phon: "di TIM-ar-bait" },
+      { id: "de-m5-c17", es: "solucionar problemas", target: "Probleme lösen", phon: "pro-BLE-me LÖ-zen" },
+      { id: "de-m5-c18", es: "gestionar el tiempo", target: "Zeit managen", phon: "tsait ME-ni-dshen" },
+      { id: "de-m5-c19", es: "estar bajo presión", target: "unter Druck stehen", phon: "UN-ter druk SHTE-en" },
+      { id: "de-m5-c20", es: "me considero responsable", target: "Ich halte mich für verantwortungsbewusst", phon: "ij HAL-te mij für fer-ANT-vor-tungs-be-vust" }
+    ],
+    dialogue: {
+      title: "Das Vorstellungsgespräch", context: "Entrevista formal (registro «Sie») para un puesto de marketing.",
+      lines: [
+        { who: "Personalchef", target: "Guten Tag, bitte setzen Sie sich. Erzählen Sie mir etwas über sich.", es: "Buenos días, siéntese por favor. Cuénteme algo sobre usted." },
+        { who: "Bewerber", target: "Guten Tag. Ich habe fünf Jahre Berufserfahrung im Marketing.", es: "Buenos días. Tengo cinco años de experiencia en marketing." },
+        { who: "Personalchef", target: "Warum wollen Sie bei uns arbeiten?", es: "¿Por qué quiere trabajar con nosotros?" },
+        { who: "Bewerber", target: "Ich bin sehr interessiert an Ihrem Unternehmen und seinen Werten.", es: "Estoy muy interesado en su empresa y sus valores." },
+        { who: "Personalchef", target: "Was sind Ihre Stärken?", es: "¿Cuáles son sus fortalezas?" },
+        { who: "Bewerber", target: "Ich arbeite gut im Team und löse Probleme schnell.", es: "Trabajo bien en equipo y resuelvo problemas rápido." },
+        { who: "Personalchef", target: "Sehr gut. Wann können Sie anfangen?", es: "Muy bien. ¿Cuándo puede empezar?" }
+      ],
+      questions: [
+        { q: "¿Cuántos años de experiencia tiene el candidato?", options: ["Tres años", "Cinco años", "Diez años"], answer: 1 },
+        { q: "¿En qué área trabaja?", options: ["Finanzas", "Marketing", "Ventas"], answer: 1 },
+        { q: "¿Qué fortaleza menciona?", options: ["Habla varios idiomas", "Trabaja bien en equipo", "Es puntual"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m5-cl1", before: "Erzählen Sie mir etwas über ", blank: "sich", after: ".", es: "Cuénteme algo sobre usted.", mode: "type" },
+      { id: "de-m5-cl2", before: "Was sind Ihre ", blank: "Stärken", after: "?", es: "¿Cuáles son sus fortalezas?", mode: "select", options: ["Stärken", "Schwächen", "Namen", "Fragen"] },
+      { id: "de-m5-cl3", before: "Wann können Sie ", blank: "anfangen", after: "?", es: "¿Cuándo puede empezar?", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 6 — Im Restaurant                                        */
+  /* ============================================================ */
+  de.push({
+    id: "de-m6", num: 6, title: "Im Restaurant", subtitle: "Reservas, pedir comida y pagar",
+    cards: [
+      { id: "de-m6-c01", es: "una mesa para dos", target: "ein Tisch für zwei", phon: "ain tish für tsvai" },
+      { id: "de-m6-c02", es: "la carta / el menú", target: "die Speisekarte", phon: "di SHPAI-ze-kar-te" },
+      { id: "de-m6-c03", es: "¿qué recomienda?", target: "Was empfehlen Sie?", phon: "vas emp-FE-len zi" },
+      { id: "de-m6-c04", es: "quisiera pedir...", target: "Ich möchte ... bestellen", phon: "ij MÖSH-te ... be-SHTE-len" },
+      { id: "de-m6-c05", es: "la cuenta, por favor", target: "Die Rechnung, bitte", phon: "di REJ-nung BI-te" },
+      { id: "de-m6-c06", es: "¿está incluida la propina?", target: "Ist das Trinkgeld inbegriffen?", phon: "ist das TRINK-guelt in-be-GRI-fen" },
+      { id: "de-m6-c07", es: "para beber", target: "zum Trinken", phon: "tsum TRIN-ken" },
+      { id: "de-m6-c08", es: "de primero", target: "als Vorspeise", phon: "als FOR-shpai-ze" },
+      { id: "de-m6-c09", es: "de segundo", target: "als Hauptgericht", phon: "als HAUPT-guer-rijt" },
+      { id: "de-m6-c10", es: "de postre", target: "als Nachtisch", phon: "als NAJ-tish" },
+      { id: "de-m6-c11", es: "soy vegetariano/a", target: "Ich bin Vegetarier/Vegetarierin", phon: "ij bin ve-ge-TA-ri-er" },
+      { id: "de-m6-c12", es: "¿tiene opciones sin gluten?", target: "Haben Sie glutenfreie Optionen?", phon: "HA-ben zi glu-TEN-frai-e op-tsi-O-nen" },
+      { id: "de-m6-c13", es: "está delicioso", target: "Es ist köstlich", phon: "es ist KÖST-lij" },
+      { id: "de-m6-c14", es: "la cuenta está mal", target: "Die Rechnung stimmt nicht", phon: "di REJ-nung shtimt nijt" },
+      { id: "de-m6-c15", es: "pagar en efectivo", target: "bar bezahlen", phon: "bar be-TSA-len" },
+      { id: "de-m6-c16", es: "pagar con tarjeta", target: "mit Karte bezahlen", phon: "mit KAR-te be-TSA-len" },
+      { id: "de-m6-c17", es: "reservar una mesa", target: "einen Tisch reservieren", phon: "AI-nen tish re-zer-VI-ren" },
+      { id: "de-m6-c18", es: "tengo una reserva a nombre de...", target: "Ich habe eine Reservierung auf den Namen...", phon: "ij HA-be AI-ne re-zer-VI-rung auf den NA-men" },
+      { id: "de-m6-c19", es: "el camarero", target: "der Kellner", phon: "der KEL-ner" },
+      { id: "de-m6-c20", es: "salud (brindis)", target: "Prost", phon: "prost" }
+    ],
+    dialogue: {
+      title: "Im Restaurant", context: "Una pareja llega a un restaurante, cena y pide la cuenta.",
+      lines: [
+        { who: "Kellner", target: "Guten Abend, haben Sie reserviert?", es: "Buenas noches, ¿ha reservado?" },
+        { who: "Gast", target: "Ja, auf den Namen Fischer, für zwei Personen.", es: "Sí, a nombre de Fischer, para dos personas." },
+        { who: "Kellner", target: "Sehr gut, bitte folgen Sie mir. Was möchten Sie trinken?", es: "Muy bien, sígame por favor. ¿Qué desean beber?" },
+        { who: "Gast", target: "Ein Glas Wein, bitte. Und was empfehlen Sie als Hauptgericht?", es: "Una copa de vino, por favor. ¿Y qué recomienda de plato principal?" },
+        { who: "Kellner", target: "Der Fisch des Tages ist sehr gut.", es: "El pescado del día está muy bueno." },
+        { who: "Gast", target: "Perfekt, das nehme ich. Die Rechnung, bitte, wenn wir fertig sind.", es: "Perfecto, eso tomaré. La cuenta, cuando terminemos." },
+        { who: "Kellner", target: "Natürlich, gerne.", es: "Por supuesto, con gusto." }
+      ],
+      questions: [
+        { q: "¿A nombre de quién es la reserva?", options: ["Weber", "Fischer", "Schmidt"], answer: 1 },
+        { q: "¿Para cuántas personas?", options: ["Una", "Dos", "Cuatro"], answer: 1 },
+        { q: "¿Qué recomienda el camarero?", options: ["La carne", "El pescado del día", "La pasta"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m6-cl1", before: "Haben Sie ", blank: "reserviert", after: "?", es: "¿Ha reservado?", mode: "type" },
+      { id: "de-m6-cl2", before: "Was ", blank: "empfehlen", after: " Sie als Hauptgericht?", es: "¿Qué recomienda de plato principal?", mode: "select", options: ["empfehlen", "essen", "trinken", "bestellen"] },
+      { id: "de-m6-cl3", before: "Die ", blank: "Rechnung", after: ", bitte.", es: "La cuenta, por favor.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 7 — Beim Arzt und in der Apotheke                       */
+  /* ============================================================ */
+  de.push({
+    id: "de-m7", num: 7, title: "Beim Arzt und in der Apotheke", subtitle: "Síntomas, recetas y medicamentos",
+    cards: [
+      { id: "de-m7-c01", es: "me duele la cabeza", target: "Ich habe Kopfschmerzen", phon: "ij HA-be KOPF-shmer-tsen" },
+      { id: "de-m7-c02", es: "me duele el estómago", target: "Ich habe Bauchschmerzen", phon: "ij HA-be BAUJ-shmer-tsen" },
+      { id: "de-m7-c03", es: "tengo fiebre", target: "Ich habe Fieber", phon: "ij HA-be FI-ber" },
+      { id: "de-m7-c04", es: "tengo tos", target: "Ich habe Husten", phon: "ij HA-be HUS-ten" },
+      { id: "de-m7-c05", es: "estoy resfriado/a", target: "Ich bin erkältet", phon: "ij bin er-KEL-tet" },
+      { id: "de-m7-c06", es: "necesito una cita", target: "Ich brauche einen Termin", phon: "ij BRAU-je AI-nen ter-MIN" },
+      { id: "de-m7-c07", es: "¿tiene algo para...?", target: "Haben Sie etwas gegen...?", phon: "HA-ben zi ET-vas GE-guen" },
+      { id: "de-m7-c08", es: "la receta", target: "das Rezept", phon: "das re-TSEPT" },
+      { id: "de-m7-c09", es: "las pastillas", target: "die Tabletten", phon: "di ta-BLE-ten" },
+      { id: "de-m7-c10", es: "el jarabe", target: "der Sirup", phon: "der ZI-rup" },
+      { id: "de-m7-c11", es: "soy alérgico/a a...", target: "Ich bin allergisch gegen...", phon: "ij bin a-LER-gish GE-guen" },
+      { id: "de-m7-c12", es: "tomar antes de comer", target: "vor dem Essen einnehmen", phon: "for dem E-sen AIN-ne-men" },
+      { id: "de-m7-c13", es: "tomar después de comer", target: "nach dem Essen einnehmen", phon: "naj dem E-sen AIN-ne-men" },
+      { id: "de-m7-c14", es: "¿es grave?", target: "Ist es ernst?", phon: "ist es ernst" },
+      { id: "de-m7-c15", es: "necesito un médico", target: "Ich brauche einen Arzt", phon: "ij BRAU-je AI-nen artst" },
+      { id: "de-m7-c16", es: "la farmacia de guardia", target: "die Notapotheke", phon: "di NOT-a-po-te-ke" },
+      { id: "de-m7-c17", es: "me siento mal", target: "Mir geht es schlecht", phon: "mir guet es shlejt" },
+      { id: "de-m7-c18", es: "¿cuánto cuesta la consulta?", target: "Was kostet die Sprechstunde?", phon: "vas KOS-tet di SHPREJ-shtun-de" },
+      { id: "de-m7-c19", es: "descansar", target: "sich ausruhen", phon: "zij AUS-ru-en" },
+      { id: "de-m7-c20", es: "beber mucha agua", target: "viel Wasser trinken", phon: "fil VA-ser TRIN-ken" }
+    ],
+    dialogue: {
+      title: "Beim Arzt", context: "Un paciente con fiebre y tos acude a consulta.",
+      lines: [
+        { who: "Arzt", target: "Guten Tag, was fehlt Ihnen?", es: "Buenos días, ¿qué le pasa?" },
+        { who: "Patient", target: "Ich habe seit zwei Tagen Fieber und Husten.", es: "Tengo fiebre y tos desde hace dos días." },
+        { who: "Arzt", target: "Haben Sie auch Kopfschmerzen?", es: "¿También tiene dolor de cabeza?" },
+        { who: "Patient", target: "Ja, ein bisschen.", es: "Sí, un poco." },
+        { who: "Arzt", target: "Das klingt nach einer Erkältung. Ich verschreibe Ihnen Tabletten.", es: "Suena a un resfriado. Le voy a recetar unas pastillas." },
+        { who: "Patient", target: "Wie oft muss ich sie einnehmen?", es: "¿Cada cuánto debo tomarlas?" },
+        { who: "Arzt", target: "Dreimal täglich, nach dem Essen. Und ruhen Sie sich aus.", es: "Tres veces al día, después de comer. Y descanse." }
+      ],
+      questions: [
+        { q: "¿Cuántos días lleva con fiebre?", options: ["Un día", "Dos días", "Una semana"], answer: 1 },
+        { q: "¿Qué diagnóstico da el médico?", options: ["Gripe fuerte", "Un resfriado", "Alergia"], answer: 1 },
+        { q: "¿Cuándo debe tomar las pastillas?", options: ["Antes de dormir", "Después de comer, tres veces al día", "Solo si hay fiebre"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m7-cl1", before: "Was ", blank: "fehlt", after: " Ihnen?", es: "¿Qué le pasa?", mode: "type" },
+      { id: "de-m7-cl2", before: "Ich habe ", blank: "Fieber", after: ".", es: "Tengo fiebre.", mode: "select", options: ["Fieber", "Husten", "Kopfschmerzen", "Bauchschmerzen"] },
+      { id: "de-m7-cl3", before: "Ruhen Sie sich ", blank: "aus", after: ".", es: "Descanse.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 8 — Im Hotel                                             */
+  /* ============================================================ */
+  de.push({
+    id: "de-m8", num: 8, title: "Im Hotel", subtitle: "Check-in, comodidades y reclamaciones",
+    cards: [
+      { id: "de-m8-c01", es: "tengo una reserva", target: "Ich habe eine Reservierung", phon: "ij HA-be AI-ne re-zer-VI-rung" },
+      { id: "de-m8-c02", es: "una habitación doble", target: "ein Doppelzimmer", phon: "ain DO-pel-tsi-mer" },
+      { id: "de-m8-c03", es: "una habitación individual", target: "ein Einzelzimmer", phon: "ain AIN-tsel-tsi-mer" },
+      { id: "de-m8-c04", es: "¿a qué hora es el check-in?", target: "Wann ist der Check-in?", phon: "van ist der chek-in" },
+      { id: "de-m8-c05", es: "¿a qué hora es el check-out?", target: "Wann ist der Check-out?", phon: "van ist der chek-aut" },
+      { id: "de-m8-c06", es: "el desayuno está incluido", target: "Das Frühstück ist inbegriffen", phon: "das FRÜ-shtük ist in-be-GRI-fen" },
+      { id: "de-m8-c07", es: "la llave de la habitación", target: "der Zimmerschlüssel", phon: "der TSI-mer-shlü-sel" },
+      { id: "de-m8-c08", es: "el wifi", target: "das WLAN", phon: "das VE-lan" },
+      { id: "de-m8-c09", es: "¿cuál es la contraseña?", target: "Wie ist das Passwort?", phon: "vi ist das PAS-vort" },
+      { id: "de-m8-c10", es: "hay un problema con...", target: "Es gibt ein Problem mit...", phon: "es guipt ain pro-BLEM mit" },
+      { id: "de-m8-c11", es: "necesito otra toalla", target: "Ich brauche ein weiteres Handtuch", phon: "ij BRAU-je ain VAI-te-res HANT-tuj" },
+      { id: "de-m8-c12", es: "el servicio de habitaciones", target: "der Zimmerservice", phon: "der TSI-mer-ser-vis" },
+      { id: "de-m8-c13", es: "quisiera hacer el check-out", target: "Ich möchte auschecken", phon: "ij MÖSH-te AUS-che-ken" },
+      { id: "de-m8-c14", es: "¿puede pedirme un taxi?", target: "Können Sie mir ein Taxi rufen?", phon: "KÖ-nen zi mir ain TAK-si RU-fen" },
+      { id: "de-m8-c15", es: "la piscina", target: "das Schwimmbad", phon: "das SHVIM-bat" },
+      { id: "de-m8-c16", es: "el ascensor", target: "der Aufzug", phon: "der AUF-tsuk" },
+      { id: "de-m8-c17", es: "quiero dejar una queja", target: "Ich möchte mich beschweren", phon: "ij MÖSH-te mij be-SHVE-ren" },
+      { id: "de-m8-c18", es: "la factura", target: "die Rechnung", phon: "di REJ-nung" },
+      { id: "de-m8-c19", es: "¿tienen habitaciones libres?", target: "Haben Sie freie Zimmer?", phon: "HA-ben zi FRAI-e TSI-mer" },
+      { id: "de-m8-c20", es: "sábanas limpias", target: "saubere Bettwäsche", phon: "ZAU-be-re BET-ve-she" }
+    ],
+    dialogue: {
+      title: "An der Rezeption", context: "Un huésped hace el check-in y pregunta por servicios del hotel.",
+      lines: [
+        { who: "Empfangsdame", target: "Guten Tag, haben Sie eine Reservierung?", es: "Buenos días, ¿tiene una reserva?" },
+        { who: "Gast", target: "Ja, auf den Namen Weber, ein Doppelzimmer für drei Nächte.", es: "Sí, a nombre de Weber, una habitación doble para tres noches." },
+        { who: "Empfangsdame", target: "Perfekt. Hier ist Ihr Zimmerschlüssel. Das Frühstück ist von sieben bis zehn Uhr.", es: "Perfecto. Aquí tiene su llave. El desayuno es de siete a diez." },
+        { who: "Gast", target: "Wie ist das WLAN-Passwort?", es: "¿Cuál es la contraseña del wifi?" },
+        { who: "Empfangsdame", target: "Es steht auf der Karte im Zimmer.", es: "Está en la tarjeta de la habitación." },
+        { who: "Gast", target: "Danke. Können Sie mir morgen ein Taxi rufen?", es: "Gracias. ¿Puede pedirme un taxi para mañana?" },
+        { who: "Empfangsdame", target: "Natürlich, kein Problem.", es: "Por supuesto, sin problema." }
+      ],
+      questions: [
+        { q: "¿A nombre de quién es la reserva?", options: ["Fischer", "Weber", "Schmidt"], answer: 1 },
+        { q: "¿Cuántas noches se queda?", options: ["Dos noches", "Tres noches", "Una semana"], answer: 1 },
+        { q: "¿Qué le pide el huésped para el día siguiente?", options: ["Un taxi", "Otra habitación", "El desayuno"], answer: 0 }
+      ]
+    },
+    cloze: [
+      { id: "de-m8-cl1", before: "Haben Sie eine ", blank: "Reservierung", after: "?", es: "¿Tiene una reserva?", mode: "type" },
+      { id: "de-m8-cl2", before: "Das Frühstück ist ", blank: "inbegriffen", after: ".", es: "El desayuno está incluido.", mode: "select", options: ["inbegriffen", "teuer", "geschlossen", "kalt"] },
+      { id: "de-m8-cl3", before: "Können Sie mir ein Taxi ", blank: "rufen", after: "?", es: "¿Puede pedirme un taxi?", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 9 — Einkaufen: Kleidung                                  */
+  /* ============================================================ */
+  de.push({
+    id: "de-m9", num: 9, title: "Einkaufen: Kleidung", subtitle: "Ropa, precios, probarse y pagar",
+    cards: [
+      { id: "de-m9-c01", es: "¿me puedo probar esto?", target: "Kann ich das anprobieren?", phon: "kan ij das AN-pro-bi-ren" },
+      { id: "de-m9-c02", es: "el probador", target: "die Umkleidekabine", phon: "di UM-klai-de-ka-bi-ne" },
+      { id: "de-m9-c03", es: "¿qué talla tiene?", target: "Welche Größe haben Sie?", phon: "VEL-je GRÖ-se HA-ben zi" },
+      { id: "de-m9-c04", es: "me queda pequeño", target: "Es ist mir zu klein", phon: "es ist mir tsu klain" },
+      { id: "de-m9-c05", es: "me queda grande", target: "Es ist mir zu groß", phon: "es ist mir tsu gros" },
+      { id: "de-m9-c06", es: "¿tiene otra talla?", target: "Haben Sie eine andere Größe?", phon: "HA-ben zi AI-ne AN-de-re GRÖ-se" },
+      { id: "de-m9-c07", es: "¿cuánto cuesta?", target: "Was kostet das?", phon: "vas KOS-tet das" },
+      { id: "de-m9-c08", es: "está de rebajas", target: "Es ist im Angebot", phon: "es ist im AN-guer-bot" },
+      { id: "de-m9-c09", es: "pagar en caja", target: "an der Kasse bezahlen", phon: "an der KA-se be-TSA-len" },
+      { id: "de-m9-c10", es: "me lo llevo", target: "Ich nehme es", phon: "ij NE-me es" },
+      { id: "de-m9-c11", es: "¿aceptan tarjeta?", target: "Akzeptieren Sie Karte?", phon: "ak-tsep-TI-ren zi KAR-te" },
+      { id: "de-m9-c12", es: "el recibo", target: "die Quittung", phon: "di KVI-tung" },
+      { id: "de-m9-c13", es: "devolver algo", target: "etwas zurückgeben", phon: "ET-vas tsu-RÜK-ge-ben" },
+      { id: "de-m9-c14", es: "cambiar de talla", target: "die Größe wechseln", phon: "di GRÖ-se VEK-seln" },
+      { id: "de-m9-c15", es: "los zapatos", target: "die Schuhe", phon: "di SHU-e" },
+      { id: "de-m9-c16", es: "la chaqueta", target: "die Jacke", phon: "di YA-ke" },
+      { id: "de-m9-c17", es: "el vestido", target: "das Kleid", phon: "das klait" },
+      { id: "de-m9-c18", es: "el color", target: "die Farbe", phon: "di FAR-be" },
+      { id: "de-m9-c19", es: "¿tiene en otro color?", target: "Haben Sie es in einer anderen Farbe?", phon: "HA-ben zi es in AI-ner AN-de-ren FAR-be" },
+      { id: "de-m9-c20", es: "gratis", target: "kostenlos", phon: "KOS-ten-los" }
+    ],
+    dialogue: {
+      title: "In der Boutique", context: "Una clienta se prueba un vestido y lo compra.",
+      lines: [
+        { who: "Verkäuferin", target: "Guten Tag, kann ich Ihnen helfen?", es: "Buenos días, ¿puedo ayudarle?" },
+        { who: "Kundin", target: "Ja, ich suche ein Kleid. Kann ich dieses anprobieren?", es: "Sí, busco un vestido. ¿Puedo probarme este?" },
+        { who: "Verkäuferin", target: "Natürlich, die Umkleidekabine ist dort.", es: "Claro, el probador está allí." },
+        { who: "Kundin", target: "Es ist mir leider zu groß. Haben Sie eine kleinere Größe?", es: "Me queda grande. ¿Tiene una talla más pequeña?" },
+        { who: "Verkäuferin", target: "Ja, einen Moment bitte. Hier, bitte sehr.", es: "Sí, un momento por favor. Aquí tiene." },
+        { who: "Kundin", target: "Perfekt, das passt gut. Ich nehme es.", es: "Perfecto, me queda bien. Me lo llevo." },
+        { who: "Verkäuferin", target: "Sehr gut, das macht vierzig Euro.", es: "Muy bien, son cuarenta euros." }
+      ],
+      questions: [
+        { q: "¿Qué busca la clienta?", options: ["Unos zapatos", "Un vestido", "Una chaqueta"], answer: 1 },
+        { q: "¿Cuál era el problema con la primera talla?", options: ["Le quedaba pequeña", "Le quedaba grande", "El color no le gustaba"], answer: 1 },
+        { q: "¿Cuánto cuesta el vestido?", options: ["Treinta euros", "Cuarenta euros", "Cincuenta euros"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m9-cl1", before: "Kann ich Ihnen ", blank: "helfen", after: "?", es: "¿Puedo ayudarle?", mode: "type" },
+      { id: "de-m9-cl2", before: "Es ist mir zu ", blank: "groß", after: ".", es: "Me queda grande.", mode: "select", options: ["groß", "klein", "teuer", "billig"] },
+      { id: "de-m9-cl3", before: "Ich ", blank: "nehme", after: " es.", es: "Me lo llevo.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 10 — Notfälle und Zwischenfälle                          */
+  /* ============================================================ */
+  de.push({
+    id: "de-m10", num: 10, title: "Notfälle und Zwischenfälle", subtitle: "Pedir ayuda, imprevistos y accidentes",
+    cards: [
+      { id: "de-m10-c01", es: "¡ayuda!", target: "Hilfe!", phon: "HIL-fe" },
+      { id: "de-m10-c02", es: "llame a una ambulancia", target: "Rufen Sie einen Krankenwagen", phon: "RU-fen zi AI-nen KRAN-ken-va-guen" },
+      { id: "de-m10-c03", es: "llame a la policía", target: "Rufen Sie die Polizei", phon: "RU-fen zi di po-li-TSAI" },
+      { id: "de-m10-c04", es: "ha habido un accidente", target: "Es gab einen Unfall", phon: "es gap AI-nen UN-fal" },
+      { id: "de-m10-c05", es: "me he perdido", target: "Ich habe mich verlaufen", phon: "ij HA-be mij fer-LAU-fen" },
+      { id: "de-m10-c06", es: "he perdido mi pasaporte", target: "Ich habe meinen Reisepass verloren", phon: "ij HA-be MAI-nen RAI-ze-pas fer-LO-ren" },
+      { id: "de-m10-c07", es: "me han robado", target: "Ich wurde bestohlen", phon: "ij VUR-de be-SHTO-len" },
+      { id: "de-m10-c08", es: "el bolso", target: "die Tasche", phon: "di TA-she" },
+      { id: "de-m10-c09", es: "la cartera", target: "das Portemonnaie", phon: "das port-mo-NE" },
+      { id: "de-m10-c10", es: "necesito ayuda urgente", target: "Ich brauche dringend Hilfe", phon: "ij BRAU-je DRIN-guent HIL-fe" },
+      { id: "de-m10-c11", es: "¿dónde está el hospital más cercano?", target: "Wo ist das nächste Krankenhaus?", phon: "vo ist das NEsh-te KRAN-ken-haus" },
+      { id: "de-m10-c12", es: "estoy herido/a", target: "Ich bin verletzt", phon: "ij bin fer-LETST" },
+      { id: "de-m10-c13", es: "se me rompió...", target: "... ist kaputt gegangen", phon: "ist ka-PUT ge-GAN-guen" },
+      { id: "de-m10-c14", es: "el incendio", target: "der Brand", phon: "der brant" },
+      { id: "de-m10-c15", es: "salida de emergencia", target: "der Notausgang", phon: "der NOT-aus-gang" },
+      { id: "de-m10-c16", es: "mantén la calma", target: "Bleib ruhig", phon: "blaip RU-ij" },
+      { id: "de-m10-c17", es: "no puedo respirar bien", target: "Ich kann nicht gut atmen", phon: "ij kan nijt gut AT-men" },
+      { id: "de-m10-c18", es: "se ha desmayado", target: "Er/Sie ist ohnmächtig geworden", phon: "er ist ON-mej-tij ge-VOR-den" },
+      { id: "de-m10-c19", es: "llame a un familiar", target: "Rufen Sie einen Angehörigen an", phon: "RU-fen zi AI-nen AN-ge-hö-ri-guen an" },
+      { id: "de-m10-c20", es: "estoy bien, gracias", target: "Mir geht es gut, danke", phon: "mir guet es gut DAN-ke" }
+    ],
+    dialogue: {
+      title: "Ein Unfall auf der Straße", context: "Un hombre se cae en la calle y un transeúnte le ayuda.",
+      lines: [
+        { who: "Passant", target: "Was ist passiert?", es: "¿Qué ha pasado?" },
+        { who: "Verletzter", target: "Ich bin gestürzt und mein Bein tut sehr weh.", es: "Me he caído y me duele mucho la pierna." },
+        { who: "Passant", target: "Bleiben Sie ruhig, ich rufe einen Krankenwagen.", es: "Mantenga la calma, llamo a una ambulancia." },
+        { who: "Verletzter", target: "Danke, können Sie auch meine Frau anrufen?", es: "Gracias, ¿puede llamar también a mi esposa?" },
+        { who: "Passant", target: "Natürlich. Wie ist ihre Nummer?", es: "Claro. ¿Cuál es su número?" },
+        { who: "Verletzter", target: "Es ist... in meinem Handy gespeichert.", es: "Está... guardado en mi móvil." },
+        { who: "Passant", target: "Der Krankenwagen kommt in fünf Minuten.", es: "La ambulancia llega en cinco minutos." }
+      ],
+      questions: [
+        { q: "¿Qué le pasó al hombre?", options: ["Se cayó y le duele la pierna", "Le robaron", "Se sintió mal"], answer: 0 },
+        { q: "¿Qué hace el transeúnte?", options: ["Llama a la policía", "Llama a una ambulancia", "Se va corriendo"], answer: 1 },
+        { q: "¿Qué le pide el herido?", options: ["Que llame a su esposa", "Que le lleve al hospital", "Que le dé agua"], answer: 0 }
+      ]
+    },
+    cloze: [
+      { id: "de-m10-cl1", before: "Rufen Sie einen ", blank: "Krankenwagen", after: "!", es: "¡Llame a una ambulancia!", mode: "type" },
+      { id: "de-m10-cl2", before: "Ich bin ", blank: "verletzt", after: ".", es: "Estoy herido.", mode: "select", options: ["verletzt", "müde", "glücklich", "hungrig"] },
+      { id: "de-m10-cl3", before: "Bleiben Sie ", blank: "ruhig", after: ".", es: "Mantenga la calma.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 11 — Bank und Bürokratie                                 */
+  /* ============================================================ */
+  de.push({
+    id: "de-m11", num: 11, title: "Bank und Bürokratie", subtitle: "Dinero, documentos y gestiones oficiales",
+    cards: [
+      { id: "de-m11-c01", es: "abrir una cuenta", target: "ein Konto eröffnen", phon: "ain KON-to ö-RÖF-nen" },
+      { id: "de-m11-c02", es: "el número de cuenta", target: "die Kontonummer", phon: "di KON-to-nu-mer" },
+      { id: "de-m11-c03", es: "la tarjeta de débito", target: "die Debitkarte", phon: "di DE-bit-kar-te" },
+      { id: "de-m11-c04", es: "la tarjeta de crédito", target: "die Kreditkarte", phon: "di kre-DIT-kar-te" },
+      { id: "de-m11-c05", es: "retirar dinero", target: "Geld abheben", phon: "guelt AP-he-ben" },
+      { id: "de-m11-c06", es: "ingresar dinero", target: "Geld einzahlen", phon: "guelt AIN-tsa-len" },
+      { id: "de-m11-c07", es: "el cajero automático", target: "der Geldautomat", phon: "der GUELT-au-to-mat" },
+      { id: "de-m11-c08", es: "la transferencia", target: "die Überweisung", phon: "di ü-ber-VAI-zung" },
+      { id: "de-m11-c09", es: "el saldo", target: "der Kontostand", phon: "der KON-to-shtant" },
+      { id: "de-m11-c10", es: "necesito un documento de identidad", target: "Ich brauche einen Ausweis", phon: "ij BRAU-je AI-nen AUS-vais" },
+      { id: "de-m11-c11", es: "rellenar un formulario", target: "ein Formular ausfüllen", phon: "ain for-mu-LAR AUS-fü-len" },
+      { id: "de-m11-c12", es: "la firma", target: "die Unterschrift", phon: "di UN-ter-shrift" },
+      { id: "de-m11-c13", es: "el comprobante", target: "der Beleg", phon: "der be-LEK" },
+      { id: "de-m11-c14", es: "la comisión", target: "die Gebühr", phon: "di ge-BÜR" },
+      { id: "de-m11-c15", es: "el préstamo", target: "der Kredit", phon: "der kre-DIT" },
+      { id: "de-m11-c16", es: "pedir una cita", target: "einen Termin vereinbaren", phon: "AI-nen ter-MIN fer-AIN-ba-ren" },
+      { id: "de-m11-c17", es: "la oficina", target: "das Büro", phon: "das bü-RO" },
+      { id: "de-m11-c18", es: "¿puedo pagar en cuotas?", target: "Kann ich in Raten zahlen?", phon: "kan ij in RA-ten TSA-len" },
+      { id: "de-m11-c19", es: "el interés", target: "die Zinsen", phon: "di TSIN-zen" },
+      { id: "de-m11-c20", es: "perdí mi tarjeta", target: "Ich habe meine Karte verloren", phon: "ij HA-be MAI-ne KAR-te fer-LO-ren" }
+    ],
+    dialogue: {
+      title: "In der Bank", context: "Un cliente abre una cuenta bancaria.",
+      lines: [
+        { who: "Bankangestellte", target: "Guten Tag, wie kann ich Ihnen helfen?", es: "Buenos días, ¿en qué puedo ayudarle?" },
+        { who: "Kunde", target: "Ich möchte ein Konto eröffnen.", es: "Quiero abrir una cuenta." },
+        { who: "Bankangestellte", target: "Kein Problem. Haben Sie einen Ausweis dabei?", es: "Sin problema. ¿Trae un documento de identidad?" },
+        { who: "Kunde", target: "Ja, hier bitte. Wie hoch ist die Gebühr?", es: "Sí, aquí tiene. ¿Cuánto es la comisión?" },
+        { who: "Bankangestellte", target: "Das Konto ist kostenlos im ersten Jahr.", es: "La cuenta es gratis el primer año." },
+        { who: "Kunde", target: "Perfekt. Wann bekomme ich meine Karte?", es: "Perfecto. ¿Cuándo recibiré mi tarjeta?" },
+        { who: "Bankangestellte", target: "In etwa einer Woche per Post.", es: "En una semana aproximadamente, por correo." }
+      ],
+      questions: [
+        { q: "¿Qué quiere hacer el cliente?", options: ["Pedir un préstamo", "Abrir una cuenta", "Cambiar dinero"], answer: 1 },
+        { q: "¿Qué le pide la empleada?", options: ["Un documento de identidad", "Una factura", "Un contrato"], answer: 0 },
+        { q: "¿Cuándo recibirá la tarjeta?", options: ["Al momento", "En una semana, por correo", "En un mes"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m11-cl1", before: "Ich möchte ein Konto ", blank: "eröffnen", after: ".", es: "Quiero abrir una cuenta.", mode: "type" },
+      { id: "de-m11-cl2", before: "Haben Sie einen ", blank: "Ausweis", after: " dabei?", es: "¿Tiene un documento de identidad?", mode: "select", options: ["Ausweis", "Schlüssel", "Regenschirm", "Koffer"] },
+      { id: "de-m11-cl3", before: "Wann bekomme ich meine ", blank: "Karte", after: "?", es: "¿Cuándo recibiré mi tarjeta?", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 12 — Im Supermarkt                                       */
+  /* ============================================================ */
+  de.push({
+    id: "de-m12", num: 12, title: "Im Supermarkt", subtitle: "Tiendas, alimentos y pago en caja",
+    cards: [
+      { id: "de-m12-c01", es: "el carrito", target: "der Einkaufswagen", phon: "der AIN-kaufs-va-guen" },
+      { id: "de-m12-c02", es: "la cesta", target: "der Einkaufskorb", phon: "der AIN-kaufs-korp" },
+      { id: "de-m12-c03", es: "¿dónde está el pasillo de...?", target: "Wo ist der Gang für...?", phon: "vo ist der gang für" },
+      { id: "de-m12-c04", es: "las frutas", target: "das Obst", phon: "das opst" },
+      { id: "de-m12-c05", es: "las verduras", target: "das Gemüse", phon: "das ge-MÜ-ze" },
+      { id: "de-m12-c06", es: "la leche", target: "die Milch", phon: "di miljj" },
+      { id: "de-m12-c07", es: "el pan", target: "das Brot", phon: "das brot" },
+      { id: "de-m12-c08", es: "los huevos", target: "die Eier", phon: "di AI-er" },
+      { id: "de-m12-c09", es: "congelado", target: "tiefgekühlt", phon: "TIF-guer-kült" },
+      { id: "de-m12-c10", es: "fresco", target: "frisch", phon: "frish" },
+      { id: "de-m12-c11", es: "¿tiene bolsas?", target: "Haben Sie Tüten?", phon: "HA-ben zi TÜ-ten" },
+      { id: "de-m12-c12", es: "pagar en caja", target: "an der Kasse bezahlen", phon: "an der KA-se be-TSA-len" },
+      { id: "de-m12-c13", es: "la oferta", target: "das Angebot", phon: "das AN-guer-bot" },
+      { id: "de-m12-c14", es: "el precio", target: "der Preis", phon: "der prais" },
+      { id: "de-m12-c15", es: "¿algo más?", target: "Sonst noch etwas?", phon: "zonst noj ET-vas" },
+      { id: "de-m12-c16", es: "eso es todo, gracias", target: "Das ist alles, danke", phon: "das ist A-les DAN-ke" },
+      { id: "de-m12-c17", es: "la fecha de caducidad", target: "das Verfallsdatum", phon: "das fer-FALS-da-tum" },
+      { id: "de-m12-c18", es: "productos de limpieza", target: "Reinigungsmittel", phon: "RAI-ni-gungs-mi-tel" },
+      { id: "de-m12-c19", es: "pesar la fruta", target: "das Obst wiegen", phon: "das opst VI-guen" },
+      { id: "de-m12-c20", es: "¿dónde está la caja?", target: "Wo ist die Kasse?", phon: "vo ist di KA-se" }
+    ],
+    dialogue: {
+      title: "Im Supermarkt", context: "Una clienta pregunta por productos en el supermercado.",
+      lines: [
+        { who: "Kundin", target: "Entschuldigung, wo finde ich Milch?", es: "Disculpe, ¿dónde encuentro la leche?" },
+        { who: "Angestellter", target: "Die Milch ist im dritten Gang, links.", es: "La leche está en el pasillo tres, a la izquierda." },
+        { who: "Kundin", target: "Danke. Und wo ist das Brot?", es: "Gracias. ¿Y dónde está el pan?" },
+        { who: "Angestellter", target: "Direkt daneben, neben dem Gemüse.", es: "Justo al lado, cerca de las verduras." },
+        { who: "Kundin", target: "Perfekt, danke sehr.", es: "Perfecto, muchas gracias." },
+        { who: "Angestellter", target: "Gern geschehen. Sonst noch etwas?", es: "De nada. ¿Algo más?" },
+        { who: "Kundin", target: "Nein, das ist alles.", es: "No, eso es todo." }
+      ],
+      questions: [
+        { q: "¿Qué busca la clienta primero?", options: ["Pan", "Leche", "Huevos"], answer: 1 },
+        { q: "¿Dónde está el pan?", options: ["En caja", "Al lado, cerca de las verduras", "En el congelador"], answer: 1 },
+        { q: "¿Necesita algo más al final?", options: ["Sí, fruta", "No, eso es todo", "Sí, bolsas"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m12-cl1", before: "Wo finde ich ", blank: "Milch", after: "?", es: "¿Dónde encuentro la leche?", mode: "type" },
+      { id: "de-m12-cl2", before: "Sonst noch ", blank: "etwas", after: "?", es: "¿Algo más?", mode: "select", options: ["etwas", "jemand", "nichts", "alles"] },
+      { id: "de-m12-cl3", before: "Das ist ", blank: "alles", after: ", danke.", es: "Eso es todo, gracias.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 13 — Auf der Post                                        */
+  /* ============================================================ */
+  de.push({
+    id: "de-m13", num: 13, title: "Auf der Post", subtitle: "Envíos, paquetes y trámites postales",
+    cards: [
+      { id: "de-m13-c01", es: "enviar una carta", target: "einen Brief schicken", phon: "AI-nen brif SHI-ken" },
+      { id: "de-m13-c02", es: "el paquete", target: "das Paket", phon: "das pa-KET" },
+      { id: "de-m13-c03", es: "el sello", target: "die Briefmarke", phon: "di BRIF-mar-ke" },
+      { id: "de-m13-c04", es: "el sobre", target: "der Umschlag", phon: "der UM-shlak" },
+      { id: "de-m13-c05", es: "¿cuánto cuesta enviar esto a...?", target: "Was kostet es, das nach ... zu schicken?", phon: "vas KOS-tet es das naj ... tsu SHI-ken" },
+      { id: "de-m13-c06", es: "correo urgente", target: "die Eilpost", phon: "di AIL-post" },
+      { id: "de-m13-c07", es: "¿cuánto tarda en llegar?", target: "Wie lange dauert es?", phon: "vi LAN-guer DAU-ert es" },
+      { id: "de-m13-c08", es: "el remitente", target: "der Absender", phon: "der AP-zen-der" },
+      { id: "de-m13-c09", es: "el destinatario", target: "der Empfänger", phon: "der emp-FEN-guer" },
+      { id: "de-m13-c10", es: "la dirección", target: "die Adresse", phon: "di a-DRE-se" },
+      { id: "de-m13-c11", es: "el código postal", target: "die Postleitzahl", phon: "di POST-lait-tsal" },
+      { id: "de-m13-c12", es: "rellenar la etiqueta", target: "das Etikett ausfüllen", phon: "das e-ti-KET AUS-fü-len" },
+      { id: "de-m13-c13", es: "frágil", target: "zerbrechlich", phon: "tser-BREJ-lij" },
+      { id: "de-m13-c14", es: "el seguimiento del paquete", target: "die Sendungsverfolgung", phon: "di ZEN-dungs-fer-fol-gung" },
+      { id: "de-m13-c15", es: "recoger un paquete", target: "ein Paket abholen", phon: "ain pa-KET AP-ho-len" },
+      { id: "de-m13-c16", es: "la oficina de correos", target: "das Postamt", phon: "das POST-amt" },
+      { id: "de-m13-c17", es: "pesar el paquete", target: "das Paket wiegen", phon: "das pa-KET VI-guen" },
+      { id: "de-m13-c18", es: "pagar en efectivo", target: "bar bezahlen", phon: "bar be-TSA-len" },
+      { id: "de-m13-c19", es: "el buzón", target: "der Briefkasten", phon: "der BRIF-kas-ten" },
+      { id: "de-m13-c20", es: "un aviso de recogida", target: "eine Abholbenachrichtigung", phon: "AI-ne AP-hol-be-naj-rij-ti-gung" }
+    ],
+    dialogue: {
+      title: "Auf der Post", context: "Un cliente envía un paquete a España.",
+      lines: [
+        { who: "Kunde", target: "Guten Tag, ich möchte dieses Paket nach Spanien schicken.", es: "Buenos días, quiero enviar este paquete a España." },
+        { who: "Angestellte", target: "Kein Problem, legen Sie es bitte auf die Waage.", es: "Sin problema, póngalo en la báscula por favor." },
+        { who: "Kunde", target: "Wie lange dauert der Versand?", es: "¿Cuánto tarda el envío?" },
+        { who: "Angestellte", target: "Ungefähr fünf Werktage.", es: "Unos cinco días laborables." },
+        { who: "Kunde", target: "Und was kostet es?", es: "¿Y cuánto cuesta?" },
+        { who: "Angestellte", target: "Das macht zwölf Euro fünfzig.", es: "Son doce euros con cincuenta." },
+        { who: "Kunde", target: "Hier bitte, in bar.", es: "Aquí tiene, en efectivo." }
+      ],
+      questions: [
+        { q: "¿A dónde envía el paquete el cliente?", options: ["Alemania", "España", "Francia"], answer: 1 },
+        { q: "¿Cuánto tarda el envío?", options: ["Un día", "Unos cinco días laborables", "Un mes"], answer: 1 },
+        { q: "¿Cómo paga el cliente?", options: ["Con tarjeta", "En efectivo", "No paga"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m13-cl1", before: "Ich möchte dieses Paket ", blank: "schicken", after: ".", es: "Quiero enviar este paquete.", mode: "type" },
+      { id: "de-m13-cl2", before: "Wie ", blank: "lange", after: " dauert der Versand?", es: "¿Cuánto tarda el envío?", mode: "select", options: ["lange", "viel", "oft", "weit"] },
+      { id: "de-m13-cl3", before: "Das macht zwölf Euro ", blank: "fünfzig", after: ".", es: "Son doce euros cincuenta.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 14 — Eine Wohnung mieten                                 */
+  /* ============================================================ */
+  de.push({
+    id: "de-m14", num: 14, title: "Eine Wohnung mieten", subtitle: "Búsqueda de vivienda, alquiler y contratos",
+    cards: [
+      { id: "de-m14-c01", es: "alquilar un piso", target: "eine Wohnung mieten", phon: "AI-ne VO-nung MI-ten" },
+      { id: "de-m14-c02", es: "el alquiler mensual", target: "die monatliche Miete", phon: "di MO-nat-li-je MI-te" },
+      { id: "de-m14-c03", es: "la fianza", target: "die Kaution", phon: "di kau-tsi-ON" },
+      { id: "de-m14-c04", es: "amueblado", target: "möbliert", phon: "mö-BLIRT" },
+      { id: "de-m14-c05", es: "sin amueblar", target: "unmöbliert", phon: "UN-mö-blirt" },
+      { id: "de-m14-c06", es: "el contrato de alquiler", target: "der Mietvertrag", phon: "der MIT-fer-trak" },
+      { id: "de-m14-c07", es: "los gastos incluidos", target: "Nebenkosten inklusive", phon: "NE-ben-kos-ten in-klu-ZI-ve" },
+      { id: "de-m14-c08", es: "el propietario", target: "der Vermieter", phon: "der fer-MI-ter" },
+      { id: "de-m14-c09", es: "el inquilino", target: "der Mieter", phon: "der MI-ter" },
+      { id: "de-m14-c10", es: "las habitaciones", target: "die Zimmer", phon: "di TSI-mer" },
+      { id: "de-m14-c11", es: "el baño", target: "das Badezimmer", phon: "das BA-de-tsi-mer" },
+      { id: "de-m14-c12", es: "la cocina", target: "die Küche", phon: "di KÜ-je" },
+      { id: "de-m14-c13", es: "el balcón", target: "der Balkon", phon: "der bal-KON" },
+      { id: "de-m14-c14", es: "¿cuándo puedo mudarme?", target: "Wann kann ich einziehen?", phon: "van kan ij AIN-tsi-en" },
+      { id: "de-m14-c15", es: "necesito ver el piso", target: "Ich möchte die Wohnung besichtigen", phon: "ij MÖSH-te di VO-nung be-ZIJ-ti-guen" },
+      { id: "de-m14-c16", es: "firmar el contrato", target: "den Vertrag unterschreiben", phon: "den fer-TRAK UN-ter-shrai-ben" },
+      { id: "de-m14-c17", es: "la calefacción", target: "die Heizung", phon: "di HAI-tsung" },
+      { id: "de-m14-c18", es: "¿se permiten mascotas?", target: "Sind Haustiere erlaubt?", phon: "zint HAUS-ti-re er-LAUPT" },
+      { id: "de-m14-c19", es: "el plazo de preaviso", target: "die Kündigungsfrist", phon: "di KÜN-di-gungs-frist" },
+      { id: "de-m14-c20", es: "mudarse", target: "umziehen", phon: "UM-tsi-en" }
+    ],
+    dialogue: {
+      title: "Wohnungsbesichtigung", context: "Un inquilino visita un piso en alquiler y pregunta condiciones.",
+      lines: [
+        { who: "Vermieter", target: "Willkommen, das ist die Wohnung. Zwei Schlafzimmer, ein Bad und eine Küche.", es: "Bienvenido, este es el piso. Dos habitaciones, un baño y una cocina." },
+        { who: "Interessent", target: "Sehr schön. Ist sie möbliert?", es: "Muy bonito. ¿Está amueblado?" },
+        { who: "Vermieter", target: "Nein, aber die Küche hat alle Geräte.", es: "No, pero la cocina tiene todos los electrodomésticos." },
+        { who: "Interessent", target: "Wie hoch ist die Miete pro Monat?", es: "¿Cuánto es el alquiler al mes?" },
+        { who: "Vermieter", target: "Achthundert Euro, plus Nebenkosten.", es: "Ochocientos euros, más gastos." },
+        { who: "Interessent", target: "Sind Haustiere erlaubt?", es: "¿Se permiten mascotas?" },
+        { who: "Vermieter", target: "Ja, kein Problem.", es: "Sí, sin problema." }
+      ],
+      questions: [
+        { q: "¿Cuántas habitaciones tiene el piso?", options: ["Una", "Dos", "Tres"], answer: 1 },
+        { q: "¿Está amueblado?", options: ["Sí, todo", "No, pero la cocina tiene electrodomésticos", "Solo la cocina"], answer: 1 },
+        { q: "¿Se permiten mascotas?", options: ["No", "Sí", "Solo perros pequeños"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m14-cl1", before: "Ist die Wohnung ", blank: "möbliert", after: "?", es: "¿Está amueblado el piso?", mode: "select", options: ["möbliert", "billig", "groß", "neu"] },
+      { id: "de-m14-cl2", before: "Wie hoch ist die ", blank: "Miete", after: " pro Monat?", es: "¿Cuánto es el alquiler al mes?", mode: "type" },
+      { id: "de-m14-cl3", before: "Sind Haustiere ", blank: "erlaubt", after: "?", es: "¿Se permiten mascotas?", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 15 — Polizei und Anzeigen                                */
+  /* ============================================================ */
+  de.push({
+    id: "de-m15", num: 15, title: "Polizei und Anzeigen", subtitle: "Denunciar un robo y trámites policiales",
+    cards: [
+      { id: "de-m15-c01", es: "denunciar un robo", target: "einen Diebstahl anzeigen", phon: "AI-nen DIP-shtal AN-tsai-guen" },
+      { id: "de-m15-c02", es: "la comisaría", target: "die Polizeiwache", phon: "di po-li-TSAI-va-je" },
+      { id: "de-m15-c03", es: "me robaron el móvil", target: "Mein Handy wurde gestohlen", phon: "main HEN-di VUR-de ge-SHTO-len" },
+      { id: "de-m15-c04", es: "perdí mis documentos", target: "Ich habe meine Papiere verloren", phon: "ij HA-be MAI-ne pa-PI-re fer-LO-ren" },
+      { id: "de-m15-c05", es: "el testigo", target: "der Zeuge", phon: "der TSOI-ge" },
+      { id: "de-m15-c06", es: "rellenar una denuncia", target: "eine Anzeige aufnehmen", phon: "AI-ne AN-tsai-ge AUF-ne-men" },
+      { id: "de-m15-c07", es: "describir al sospechoso", target: "den Verdächtigen beschreiben", phon: "den fer-DEJ-ti-guen be-SHRAI-ben" },
+      { id: "de-m15-c08", es: "el seguro", target: "die Versicherung", phon: "di fer-ZI-je-rung" },
+      { id: "de-m15-c09", es: "necesito un intérprete", target: "Ich brauche einen Dolmetscher", phon: "ij BRAU-je AI-nen DOL-me-cher" },
+      { id: "de-m15-c10", es: "¿dónde ocurrió?", target: "Wo ist es passiert?", phon: "vo ist es pa-SIRT" },
+      { id: "de-m15-c11", es: "¿a qué hora ocurrió?", target: "Um wie viel Uhr ist es passiert?", phon: "um vi fil ur ist es pa-SIRT" },
+      { id: "de-m15-c12", es: "una copia del informe", target: "eine Kopie des Berichts", phon: "AI-ne ko-PI des be-RIJTS" },
+      { id: "de-m15-c13", es: "el número de expediente", target: "die Aktennummer", phon: "di AK-ten-nu-mer" },
+      { id: "de-m15-c14", es: "estar asustado/a", target: "ängstlich sein", phon: "ENGST-lij zain" },
+      { id: "de-m15-c15", es: "sentirse seguro/a", target: "sich sicher fühlen", phon: "zij ZI-jer FÜ-len" },
+      { id: "de-m15-c16", es: "llamar a la embajada", target: "die Botschaft anrufen", phon: "di BOT-shaft AN-ru-fen" },
+      { id: "de-m15-c17", es: "el pasaporte", target: "der Reisepass", phon: "der RAI-ze-pas" },
+      { id: "de-m15-c18", es: "bloquear la tarjeta", target: "die Karte sperren", phon: "di KAR-te SHPE-ren" },
+      { id: "de-m15-c19", es: "gracias por su ayuda", target: "Danke für Ihre Hilfe", phon: "DAN-ke für I-re HIL-fe" },
+      { id: "de-m15-c20", es: "todo estará bien", target: "Alles wird gut", phon: "A-les virt gut" }
+    ],
+    dialogue: {
+      title: "Auf der Polizeiwache", context: "Una víctima de robo denuncia lo ocurrido en la comisaría.",
+      lines: [
+        { who: "Polizist", target: "Guten Tag, was ist passiert?", es: "Buenos días, ¿qué ha pasado?" },
+        { who: "Opfer", target: "Mein Rucksack wurde gestohlen, mit meinem Handy und Portemonnaie.", es: "Me robaron la mochila, con el móvil y la cartera." },
+        { who: "Polizist", target: "Wo und wann ist das passiert?", es: "¿Dónde y cuándo ocurrió?" },
+        { who: "Opfer", target: "Vor einer Stunde, am Bahnhof.", es: "Hace una hora, en la estación." },
+        { who: "Polizist", target: "Ich nehme jetzt die Anzeige auf. Können Sie den Täter beschreiben?", es: "Voy a tomar la denuncia. ¿Puede describir al ladrón?" },
+        { who: "Opfer", target: "Er trug eine schwarze Jacke, das ist alles, was ich sah.", es: "Llevaba una chaqueta negra, es todo lo que vi." },
+        { who: "Polizist", target: "Danke, hier ist eine Kopie des Berichts für Ihre Versicherung.", es: "Gracias, aquí tiene una copia del informe para su seguro." }
+      ],
+      questions: [
+        { q: "¿Qué le robaron a la víctima?", options: ["Solo el móvil", "La mochila, con móvil y cartera", "El pasaporte"], answer: 1 },
+        { q: "¿Dónde ocurrió el robo?", options: ["En la estación", "En el hotel", "En el aeropuerto"], answer: 0 },
+        { q: "¿Para qué le dan la copia del informe?", options: ["Para la embajada", "Para el seguro", "Para el juez"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m15-cl1", before: "Mein Rucksack wurde ", blank: "gestohlen", after: ".", es: "Me robaron la mochila.", mode: "type" },
+      { id: "de-m15-cl2", before: "Wo ist es ", blank: "passiert", after: "?", es: "¿Dónde ocurrió?", mode: "select", options: ["passiert", "gefallen", "gegangen", "gekommen"] },
+      { id: "de-m15-cl3", before: "Können Sie den Täter ", blank: "beschreiben", after: "?", es: "¿Puede describir al sospechoso?", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 16 — Freizeit, Kultur und Tourismus                      */
+  /* ============================================================ */
+  de.push({
+    id: "de-m16", num: 16, title: "Freizeit, Kultur und Tourismus", subtitle: "Museos, entradas, espectáculos y visitas",
+    cards: [
+      { id: "de-m16-c01", es: "el museo", target: "das Museum", phon: "das mu-ZE-um" },
+      { id: "de-m16-c02", es: "la entrada", target: "der Eintritt", phon: "der AIN-trit" },
+      { id: "de-m16-c03", es: "¿hay descuento para estudiantes?", target: "Gibt es einen Studentenrabatt?", phon: "guipt es AI-nen shtu-DEN-ten-ra-bat" },
+      { id: "de-m16-c04", es: "la exposición", target: "die Ausstellung", phon: "di AUS-shte-lung" },
+      { id: "de-m16-c05", es: "la visita guiada", target: "die Führung", phon: "di FÜ-rung" },
+      { id: "de-m16-c06", es: "el horario de apertura", target: "die Öffnungszeiten", phon: "di ÖF-nungs-tsai-ten" },
+      { id: "de-m16-c07", es: "el monumento", target: "das Denkmal", phon: "das DENK-mal" },
+      { id: "de-m16-c08", es: "sacar fotos", target: "Fotos machen", phon: "FO-tos MA-jen" },
+      { id: "de-m16-c09", es: "el folleto", target: "die Broschüre", phon: "di bro-SHÜ-re" },
+      { id: "de-m16-c10", es: "la taquilla", target: "die Kasse", phon: "di KA-se" },
+      { id: "de-m16-c11", es: "reservar entradas online", target: "Tickets online reservieren", phon: "TI-kets ON-lain re-zer-VI-ren" },
+      { id: "de-m16-c12", es: "el teatro", target: "das Theater", phon: "das te-A-ter" },
+      { id: "de-m16-c13", es: "el concierto", target: "das Konzert", phon: "das kon-TSERT" },
+      { id: "de-m16-c14", es: "imperdible", target: "nicht zu verpassen", phon: "nijt tsu fer-PA-sen" },
+      { id: "de-m16-c15", es: "¿cuánto dura la visita?", target: "Wie lange dauert der Besuch?", phon: "vi LAN-guer DAU-ert der be-ZUJ" },
+      { id: "de-m16-c16", es: "la oficina de turismo", target: "das Touristenbüro", phon: "das tu-RIS-ten-bü-ro" },
+      { id: "de-m16-c17", es: "recomendar un lugar", target: "einen Ort empfehlen", phon: "AI-nen ort emp-FE-len" },
+      { id: "de-m16-c18", es: "el casco antiguo", target: "die Altstadt", phon: "di ALT-shtat" },
+      { id: "de-m16-c19", es: "vale la pena", target: "Es lohnt sich", phon: "es lont zij" },
+      { id: "de-m16-c20", es: "el guía turístico", target: "der Reiseführer", phon: "der RAI-ze-fü-rer" }
+    ],
+    dialogue: {
+      title: "Im Touristenbüro", context: "Un turista pide información sobre el museo local.",
+      lines: [
+        { who: "Angestellte", target: "Guten Tag, wie kann ich Ihnen helfen?", es: "Buenos días, ¿en qué puedo ayudarle?" },
+        { who: "Tourist", target: "Ich möchte das Museum besuchen. Wie sind die Öffnungszeiten?", es: "Quiero visitar el museo. ¿Cuál es el horario?" },
+        { who: "Angestellte", target: "Von neun bis achtzehn Uhr, außer montags.", es: "De nueve a dieciocho, excepto los lunes." },
+        { who: "Tourist", target: "Gibt es eine Führung auf Englisch?", es: "¿Hay visita guiada en inglés?" },
+        { who: "Angestellte", target: "Ja, um elf Uhr und um fünfzehn Uhr.", es: "Sí, a las once y a las quince." },
+        { who: "Tourist", target: "Perfekt, und gibt es einen Studentenrabatt?", es: "Perfecto, ¿y hay descuento de estudiante?" },
+        { who: "Angestellte", target: "Ja, mit Ausweis fünfzig Prozent Rabatt.", es: "Sí, con carné, cincuenta por ciento de descuento." }
+      ],
+      questions: [
+        { q: "¿Cuándo está cerrado el museo?", options: ["Los domingos", "Los lunes", "Nunca"], answer: 1 },
+        { q: "¿A qué hora hay visitas guiadas en inglés?", options: ["A las 9 y a las 12", "A las 11 y a las 15", "Solo por la tarde"], answer: 1 },
+        { q: "¿Qué descuento hay para estudiantes?", options: ["25%", "50%", "No hay"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m16-cl1", before: "Wie sind die ", blank: "Öffnungszeiten", after: "?", es: "¿Cuál es el horario de apertura?", mode: "type" },
+      { id: "de-m16-cl2", before: "Gibt es einen Studenten", blank: "rabatt", after: "?", es: "¿Hay descuento de estudiante?", mode: "select", options: ["rabatt", "pass", "karte", "platz"] },
+      { id: "de-m16-cl3", before: "Es ", blank: "lohnt", after: " sich.", es: "Vale la pena.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 17 — Am Flughafen                                        */
+  /* ============================================================ */
+  de.push({
+    id: "de-m17", num: 17, title: "Am Flughafen", subtitle: "Check-in, embarque y aduanas",
+    cards: [
+      { id: "de-m17-c01", es: "el check-in", target: "der Check-in", phon: "der chek-in" },
+      { id: "de-m17-c02", es: "la tarjeta de embarque", target: "die Bordkarte", phon: "di BORT-kar-te" },
+      { id: "de-m17-c03", es: "el equipaje de mano", target: "das Handgepäck", phon: "das HANT-guer-pek" },
+      { id: "de-m17-c04", es: "facturar la maleta", target: "den Koffer aufgeben", phon: "den KO-fer AUF-ge-ben" },
+      { id: "de-m17-c05", es: "la puerta de embarque", target: "das Gate", phon: "das guet" },
+      { id: "de-m17-c06", es: "el control de seguridad", target: "die Sicherheitskontrolle", phon: "di ZI-jer-haits-kon-tro-le" },
+      { id: "de-m17-c07", es: "el pasaporte", target: "der Reisepass", phon: "der RAI-ze-pas" },
+      { id: "de-m17-c08", es: "¿el vuelo tiene retraso?", target: "Hat der Flug Verspätung?", phon: "hat der fluk fer-SHPE-tung" },
+      { id: "de-m17-c09", es: "la aduana", target: "der Zoll", phon: "der tsol" },
+      { id: "de-m17-c10", es: "el asiento", target: "der Sitzplatz", phon: "der ZITS-plats" },
+      { id: "de-m17-c11", es: "¿ventanilla o pasillo?", target: "Fenster oder Gang?", phon: "FENS-ter O-der gang" },
+      { id: "de-m17-c12", es: "perder el vuelo", target: "den Flug verpassen", phon: "den fluk fer-PA-sen" },
+      { id: "de-m17-c13", es: "la cinta de equipajes", target: "das Gepäckband", phon: "das ge-PEK-bant" },
+      { id: "de-m17-c14", es: "mi maleta no ha llegado", target: "Mein Koffer ist nicht angekommen", phon: "main KO-fer ist nijt AN-guer-ko-men" },
+      { id: "de-m17-c15", es: "el vuelo de conexión", target: "der Anschlussflug", phon: "der AN-shlus-fluk" },
+      { id: "de-m17-c16", es: "la sala de espera", target: "der Wartebereich", phon: "der VAR-te-be-raij" },
+      { id: "de-m17-c17", es: "despegar", target: "starten", phon: "SHTAR-ten" },
+      { id: "de-m17-c18", es: "aterrizar", target: "landen", phon: "LAN-den" },
+      { id: "de-m17-c19", es: "abróchense los cinturones", target: "Bitte anschnallen", phon: "BI-te AN-shna-len" },
+      { id: "de-m17-c20", es: "el objeto perdido", target: "der Fundgegenstand", phon: "der FUNT-guer-guen-shtant" }
+    ],
+    dialogue: {
+      title: "Am Check-in-Schalter", context: "Un pasajero factura su equipaje y elige asiento.",
+      lines: [
+        { who: "Angestellte", target: "Guten Tag, Ihren Reisepass und Ihr Ticket, bitte.", es: "Buenos días, su pasaporte y su billete, por favor." },
+        { who: "Passagier", target: "Hier bitte. Kann ich meinen Koffer aufgeben?", es: "Aquí tiene. ¿Puedo facturar mi maleta?" },
+        { who: "Angestellte", target: "Ja, legen Sie ihn bitte auf die Waage.", es: "Sí, póngala en la báscula, por favor." },
+        { who: "Passagier", target: "Fenster oder Gang, was ist frei?", es: "¿Ventanilla o pasillo, qué queda libre?" },
+        { who: "Angestellte", target: "Nur noch ein Fensterplatz.", es: "Solo queda un asiento de ventanilla." },
+        { who: "Passagier", target: "Das ist perfekt. Hat der Flug Verspätung?", es: "Perfecto. ¿Tiene retraso el vuelo?" },
+        { who: "Angestellte", target: "Nein, er ist pünktlich. Gate B12.", es: "No, es puntual. Puerta B12." }
+      ],
+      questions: [
+        { q: "¿Qué le pide primero la empleada al pasajero?", options: ["El equipaje", "El pasaporte y el billete", "La tarjeta de crédito"], answer: 1 },
+        { q: "¿Qué tipo de asiento le queda disponible?", options: ["Pasillo", "Ventanilla", "Ninguno"], answer: 1 },
+        { q: "¿Tiene retraso el vuelo?", options: ["Sí, una hora", "No, es puntual", "Está cancelado"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m17-cl1", before: "Kann ich meinen Koffer ", blank: "aufgeben", after: "?", es: "¿Puedo facturar mi maleta?", mode: "type" },
+      { id: "de-m17-cl2", before: "Fenster oder ", blank: "Gang", after: "?", es: "¿Ventanilla o pasillo?", mode: "select", options: ["Gang", "Sitz", "Tür", "Flur"] },
+      { id: "de-m17-cl3", before: "Hat der Flug ", blank: "Verspätung", after: "?", es: "¿Tiene retraso el vuelo?", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 18 — Ein Auto mieten                                     */
+  /* ============================================================ */
+  de.push({
+    id: "de-m18", num: 18, title: "Ein Auto mieten", subtitle: "Alquiler de vehículos y conducción",
+    cards: [
+      { id: "de-m18-c01", es: "alquilar un coche", target: "ein Auto mieten", phon: "ain AU-to MI-ten" },
+      { id: "de-m18-c02", es: "el carné de conducir", target: "der Führerschein", phon: "der FÜ-rer-shain" },
+      { id: "de-m18-c03", es: "el seguro a todo riesgo", target: "die Vollkaskoversicherung", phon: "di FOL-kas-ko-fer-zi-je-rung" },
+      { id: "de-m18-c04", es: "¿el depósito está lleno?", target: "Ist der Tank voll?", phon: "ist der tank fol" },
+      { id: "de-m18-c05", es: "devolver el coche", target: "das Auto zurückgeben", phon: "das AU-to tsu-RÜK-ge-ben" },
+      { id: "de-m18-c06", es: "el kilometraje", target: "der Kilometerstand", phon: "der ki-lo-ME-ter-shtant" },
+      { id: "de-m18-c07", es: "¿incluye kilometraje ilimitado?", target: "Ist unbegrenzte Kilometerzahl inbegriffen?", phon: "ist UN-be-grents-te ki-lo-ME-ter-tsal in-be-GRI-fen" },
+      { id: "de-m18-c08", es: "automático o manual", target: "Automatik oder Schaltung", phon: "au-to-MA-tik O-der SHAL-tung" },
+      { id: "de-m18-c09", es: "la gasolinera", target: "die Tankstelle", phon: "di TANK-shte-le" },
+      { id: "de-m18-c10", es: "llenar el depósito", target: "volltanken", phon: "FOL-tan-ken" },
+      { id: "de-m18-c11", es: "el peaje", target: "die Maut", phon: "di maut" },
+      { id: "de-m18-c12", es: "el atasco", target: "der Stau", phon: "der shtau" },
+      { id: "de-m18-c13", es: "el límite de velocidad", target: "die Geschwindigkeitsbegrenzung", phon: "di ge-SHVIN-dig-kaits-be-gren-tsung" },
+      { id: "de-m18-c14", es: "una multa", target: "ein Bußgeld", phon: "ain BUS-guelt" },
+      { id: "de-m18-c15", es: "aparcar", target: "parken", phon: "PAR-ken" },
+      { id: "de-m18-c16", es: "el parking", target: "der Parkplatz", phon: "der PARK-plats" },
+      { id: "de-m18-c17", es: "el GPS", target: "das Navi", phon: "das NA-vi" },
+      { id: "de-m18-c18", es: "una avería", target: "eine Panne", phon: "AI-ne PA-ne" },
+      { id: "de-m18-c19", es: "el neumático pinchado", target: "der platte Reifen", phon: "der PLA-te RAI-fen" },
+      { id: "de-m18-c20", es: "la asistencia en carretera", target: "der Pannendienst", phon: "der PA-nen-dinst" }
+    ],
+    dialogue: {
+      title: "Beim Autoverleih", context: "Un cliente recoge un coche de alquiler.",
+      lines: [
+        { who: "Angestellter", target: "Guten Tag, ich sehe, Sie haben eine Reservierung.", es: "Buenos días, veo que tiene una reserva." },
+        { who: "Kunde", target: "Ja, genau. Hier ist mein Führerschein und meine Kreditkarte.", es: "Sí, exacto. Aquí está mi carné y mi tarjeta de crédito." },
+        { who: "Angestellter", target: "Möchten Sie eine Vollkaskoversicherung?", es: "¿Quiere un seguro a todo riesgo?" },
+        { who: "Kunde", target: "Das empfehle ich, ja. Ist der Tank voll?", es: "Se lo recomiendo, sí. ¿Está lleno el depósito?" },
+        { who: "Angestellter", target: "Ja, und Sie müssen ihn voll zurückgeben.", es: "Sí, y debe devolverlo lleno." },
+        { who: "Kunde", target: "Verstanden. Ist unbegrenzte Kilometerzahl inbegriffen?", es: "Entendido. ¿Está incluido el kilometraje ilimitado?" },
+        { who: "Angestellter", target: "Ja, kein Problem.", es: "Sí, sin problema." }
+      ],
+      questions: [
+        { q: "¿Qué le pide el empleado al cliente?", options: ["El carné de conducir y la tarjeta de crédito", "Solo el pasaporte", "Nada"], answer: 0 },
+        { q: "¿Cómo debe devolver el coche?", options: ["Con el depósito vacío", "Con el depósito lleno", "Con la mitad"], answer: 1 },
+        { q: "¿Está incluido el kilometraje ilimitado?", options: ["No", "Sí", "Solo los primeros 100 km"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m18-cl1", before: "Ihren ", blank: "Führerschein", after: ", bitte.", es: "Su carné de conducir, por favor.", mode: "type" },
+      { id: "de-m18-cl2", before: "Ist der Tank ", blank: "voll", after: "?", es: "¿Está lleno el depósito?", mode: "select", options: ["voll", "leer", "kaputt", "neu"] },
+      { id: "de-m18-cl3", before: "Ist unbegrenzte Kilometerzahl ", blank: "inbegriffen", after: "?", es: "¿Está incluido el kilometraje ilimitado?", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 19 — Wetter und Klima                                    */
+  /* ============================================================ */
+  de.push({
+    id: "de-m19", num: 19, title: "Wetter und Klima", subtitle: "Predicción meteorológica y estaciones",
+    cards: [
+      { id: "de-m19-c01", es: "¿qué tiempo hace?", target: "Wie ist das Wetter?", phon: "vi ist das VE-ter" },
+      { id: "de-m19-c02", es: "hace sol", target: "Es ist sonnig", phon: "es ist ZO-nij" },
+      { id: "de-m19-c03", es: "está lloviendo", target: "Es regnet", phon: "es RE-gnet" },
+      { id: "de-m19-c04", es: "hace frío", target: "Es ist kalt", phon: "es ist kalt" },
+      { id: "de-m19-c05", es: "hace calor", target: "Es ist heiß", phon: "es ist hais" },
+      { id: "de-m19-c06", es: "está nublado", target: "Es ist bewölkt", phon: "es ist be-VÖLKT" },
+      { id: "de-m19-c07", es: "nieva", target: "Es schneit", phon: "es shnait" },
+      { id: "de-m19-c08", es: "hay viento", target: "Es ist windig", phon: "es ist VIN-dij" },
+      { id: "de-m19-c09", es: "la temperatura", target: "die Temperatur", phon: "di tem-pe-ra-TUR" },
+      { id: "de-m19-c10", es: "grados", target: "Grad", phon: "grat" },
+      { id: "de-m19-c11", es: "el pronóstico del tiempo", target: "die Wettervorhersage", phon: "di VE-ter-for-her-za-ge" },
+      { id: "de-m19-c12", es: "llevar paraguas", target: "einen Regenschirm mitnehmen", phon: "AI-nen RE-guen-shirm MIT-ne-men" },
+      { id: "de-m19-c13", es: "la primavera", target: "der Frühling", phon: "der FRÜ-ling" },
+      { id: "de-m19-c14", es: "el verano", target: "der Sommer", phon: "der ZO-mer" },
+      { id: "de-m19-c15", es: "el otoño", target: "der Herbst", phon: "der herpst" },
+      { id: "de-m19-c16", es: "el invierno", target: "der Winter", phon: "der VIN-ter" },
+      { id: "de-m19-c17", es: "una tormenta", target: "ein Gewitter", phon: "ain ge-VI-ter" },
+      { id: "de-m19-c18", es: "la humedad", target: "die Feuchtigkeit", phon: "di FOICH-tig-kait" },
+      { id: "de-m19-c19", es: "despejado", target: "klar", phon: "klar" },
+      { id: "de-m19-c20", es: "¿mañana lloverá?", target: "Wird es morgen regnen?", phon: "virt es MOR-guen RE-gnen" }
+    ],
+    dialogue: {
+      title: "Über das Wochenende sprechen", context: "Dos amigos deciden si ir de excursión según el tiempo.",
+      lines: [
+        { who: "Lisa", target: "Wie ist das Wetter morgen?", es: "¿Cómo estará el tiempo mañana?" },
+        { who: "Paul", target: "Laut der Vorhersage wird es regnen und windig sein.", es: "Según el pronóstico, lloverá y hará viento." },
+        { who: "Lisa", target: "Oh nein, wir wollten wandern gehen.", es: "Vaya, queríamos ir de excursión." },
+        { who: "Paul", target: "Vielleicht am Sonntag, da soll es sonnig sein.", es: "Quizás el domingo, dicen que estará soleado." },
+        { who: "Lisa", target: "Gut, dann verschieben wir es auf Sonntag.", es: "Bien, entonces lo dejamos para el domingo." },
+        { who: "Paul", target: "Und nimm einen Regenschirm mit, für alle Fälle.", es: "Y llévate un paraguas, por si acaso." }
+      ],
+      questions: [
+        { q: "¿Qué tiempo hará mañana?", options: ["Sol y calor", "Lluvia y viento", "Nieve"], answer: 1 },
+        { q: "¿Qué planeaban hacer?", options: ["Ir de compras", "Ir de excursión", "Ver una película"], answer: 1 },
+        { q: "¿Para qué día cambian el plan?", options: ["Para el sábado", "Para el domingo", "No lo cambian"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m19-cl1", before: "Wie ist das ", blank: "Wetter", after: " morgen?", es: "¿Cómo estará el tiempo mañana?", mode: "type" },
+      { id: "de-m19-cl2", before: "Es wird ", blank: "sonnig", after: " sein.", es: "Estará soleado.", mode: "select", options: ["sonnig", "regnerisch", "windig", "bewölkt"] },
+      { id: "de-m19-cl3", before: "Nimm einen ", blank: "Regenschirm", after: " mit.", es: "Llévate un paraguas.", mode: "type" }
+    ]
+  });
+ 
+  /* ============================================================ */
+  /* MÓDULO 20 — Technologie und Arbeit                              */
+  /* ============================================================ */
+  de.push({
+    id: "de-m20", num: 20, title: "Technologie und Arbeit", subtitle: "Conexión, videollamadas y trabajo remoto",
+    cards: [
+      { id: "de-m20-c01", es: "el portátil", target: "der Laptop", phon: "der LEP-top" },
+      { id: "de-m20-c02", es: "la contraseña", target: "das Passwort", phon: "das PAS-vort" },
+      { id: "de-m20-c03", es: "no tengo conexión", target: "Ich habe keine Verbindung", phon: "ij HA-be KAI-ne fer-BIN-dung" },
+      { id: "de-m20-c04", es: "el wifi no funciona", target: "Das WLAN funktioniert nicht", phon: "das VE-lan funk-tsi-o-NIRT nijt" },
+      { id: "de-m20-c05", es: "reiniciar el ordenador", target: "den Computer neu starten", phon: "den kom-PJU-ter noi SHTAR-ten" },
+      { id: "de-m20-c06", es: "enviar un correo", target: "eine E-Mail senden", phon: "AI-ne I-mail ZEN-den" },
+      { id: "de-m20-c07", es: "adjuntar un archivo", target: "eine Datei anhängen", phon: "AI-ne da-TAI AN-hen-guen" },
+      { id: "de-m20-c08", es: "una videollamada", target: "ein Videoanruf", phon: "ain VI-de-o-an-ruf" },
+      { id: "de-m20-c09", es: "trabajar desde casa", target: "von zu Hause arbeiten", phon: "fon tsu HAU-ze AR-bai-ten" },
+      { id: "de-m20-c10", es: "la reunión", target: "die Besprechung", phon: "di be-SHPRE-jung" },
+      { id: "de-m20-c11", es: "el plazo de entrega", target: "die Frist", phon: "di frist" },
+      { id: "de-m20-c12", es: "cargar el móvil", target: "das Handy aufladen", phon: "das HEN-di AUF-la-den" },
+      { id: "de-m20-c13", es: "descargar una app", target: "eine App herunterladen", phon: "AI-ne ep he-RUN-ter-la-den" },
+      { id: "de-m20-c14", es: "el archivo adjunto", target: "der Anhang", phon: "der AN-hang" },
+      { id: "de-m20-c15", es: "guardar el documento", target: "das Dokument speichern", phon: "das do-ku-MENT SHPAI-jern" },
+      { id: "de-m20-c16", es: "compartir la pantalla", target: "den Bildschirm teilen", phon: "den BILT-shirm TAI-len" },
+      { id: "de-m20-c17", es: "la impresora", target: "der Drucker", phon: "der DRU-ker" },
+      { id: "de-m20-c18", es: "se me ha bloqueado el ordenador", target: "Mein Computer ist eingefroren", phon: "main kom-PJU-ter ist AIN-guer-fro-ren" },
+      { id: "de-m20-c19", es: "actualizar el software", target: "die Software aktualisieren", phon: "di SOFT-ve-a ak-tu-a-li-ZI-ren" },
+      { id: "de-m20-c20", es: "¿me escuchas bien?", target: "Kannst du mich gut hören?", phon: "kanst du mij gut HÖ-ren" }
+    ],
+    dialogue: {
+      title: "Ein Problem mit dem WLAN", context: "Dos compañeros de trabajo tienen problemas técnicos en una videollamada.",
+      lines: [
+        { who: "Kollegin", target: "Kannst du mich hören? Ich glaube, mein WLAN funktioniert nicht.", es: "¿Me escuchas? Creo que mi wifi no funciona bien." },
+        { who: "Kollege", target: "Ja, ich höre dich, aber das Bild friert manchmal ein.", es: "Sí, te escucho, pero la imagen se congela a veces." },
+        { who: "Kollegin", target: "Ich versuche, den Router neu zu starten.", es: "Voy a intentar reiniciar el router." },
+        { who: "Kollege", target: "Gute Idee. Ich schicke dir inzwischen die Präsentation per E-Mail.", es: "Buena idea. Mientras tanto te envío la presentación por correo." },
+        { who: "Kollegin", target: "Danke, hast du sie schon angehängt?", es: "Gracias, ¿ya la has adjuntado?" },
+        { who: "Kollege", target: "Ja, gerade gesendet.", es: "Sí, la acabo de enviar." },
+        { who: "Kollegin", target: "Perfekt, jetzt funktioniert es wieder. Können wir weitermachen?", es: "Perfecto, ya vuelve a funcionar. ¿Podemos continuar?" }
+      ],
+      questions: [
+        { q: "¿Qué problema tiene la compañera?", options: ["Se quedó sin batería", "El wifi no funciona bien", "Perdió el archivo"], answer: 1 },
+        { q: "¿Qué le envía el compañero mientras tanto?", options: ["Un mensaje de texto", "La presentación por correo", "Nada"], answer: 1 },
+        { q: "¿Se resuelve el problema al final?", options: ["Sí", "No", "No queda claro"], answer: 0 }
+      ]
+    },
+    cloze: [
+      { id: "de-m20-cl1", before: "Kannst du mich ", blank: "gut", after: " hören?", es: "¿Me escuchas bien?", mode: "type" },
+      { id: "de-m20-cl2", before: "Ich schicke dir die Präsentation per ", blank: "E-Mail", after: ".", es: "Te envío la presentación por correo.", mode: "select", options: ["E-Mail", "Post", "Telefon", "Hand"] },
+      { id: "de-m20-cl3", before: "Können wir ", blank: "weitermachen", after: "?", es: "¿Podemos continuar?", mode: "type" }
+    ],
+    falseFriends: [
+      { es: "chef (cocinero)", esMeaning: "persona que cocina", target: "Chef", targetMeaning: "jefe/a en el trabajo (cocinero se dice «Koch»)" }
+    ]
+  });
+
   
+  /* ============================================================ */
+  /* MÓDULO 21 — Begrüßungen und Vorstellung                        */
+  /* ============================================================ */
+  de.push({
+    id: "de-m21", num: 21, title: "Begrüßungen und Vorstellung", subtitle: "Saludos, presentarse e información personal",
+    cards: [
+      { id: "de-m21-c01", es: "hola", target: "Hallo", phon: "HA-lo" },
+      { id: "de-m21-c02", es: "buenos días", target: "Guten Morgen", phon: "GU-ten MOR-guen" },
+      { id: "de-m21-c03", es: "buenas tardes", target: "Guten Tag", phon: "GU-ten tak" },
+      { id: "de-m21-c04", es: "buenas noches (despedida)", target: "Gute Nacht", phon: "GU-te najt" },
+      { id: "de-m21-c05", es: "adiós", target: "Auf Wiedersehen", phon: "auf VI-der-ze-en" },
+      { id: "de-m21-c06", es: "chao (informal)", target: "Tschüss", phon: "chius", note: "Muy usado entre amigos; con desconocidos mejor «Auf Wiedersehen»." },
+      { id: "de-m21-c07", es: "por favor", target: "Bitte", phon: "BI-te" },
+      { id: "de-m21-c08", es: "gracias", target: "Danke", phon: "DAN-ke" },
+      { id: "de-m21-c09", es: "de nada", target: "Bitte schön", phon: "BI-te shön" },
+      { id: "de-m21-c10", es: "perdón / disculpe", target: "Entschuldigung", phon: "ent-SHUL-di-gung" },
+      { id: "de-m21-c11", es: "sí", target: "Ja", phon: "ya" },
+      { id: "de-m21-c12", es: "no", target: "Nein", phon: "nain" },
+      { id: "de-m21-c13", es: "me llamo...", target: "Ich heiße...", phon: "ij HAI-se" },
+      { id: "de-m21-c14", es: "¿cómo te llamas?", target: "Wie heißt du?", phon: "vi haist du", note: "Con desconocidos formales: «Wie heißen Sie?»." },
+      { id: "de-m21-c15", es: "mucho gusto", target: "Freut mich", phon: "froit mij" },
+      { id: "de-m21-c16", es: "soy de España", target: "Ich komme aus Spanien", phon: "ij KO-me aus SHPA-ni-en" },
+      { id: "de-m21-c17", es: "¿de dónde eres?", target: "Woher kommst du?", phon: "vo-HER komst du" },
+      { id: "de-m21-c18", es: "tengo ... años", target: "Ich bin ... Jahre alt", phon: "ij bin ... YA-re alt" },
+      { id: "de-m21-c19", es: "¿cuántos años tienes?", target: "Wie alt bist du?", phon: "vi alt bist du" },
+      { id: "de-m21-c20", es: "soy profesor/a", target: "Ich bin Lehrer / Lehrerin", phon: "ij bin LE-rer / LE-re-rin" },
+      { id: "de-m21-c21", es: "¿cómo estás?", target: "Wie geht es dir?", phon: "vi guet es dir" },
+      { id: "de-m21-c22", es: "estoy bien, gracias", target: "Mir geht es gut, danke", phon: "mir guet es gut DAN-ke" }
+    ],
+    dialogue: {
+      title: "Erstes Treffen", context: "Anna y Markus se conocen por primera vez e intercambian datos básicos.",
+      lines: [
+        { who: "Anna", target: "Hallo! Ich heiße Anna. Und du?", es: "¡Hola! Me llamo Anna. ¿Y tú?" },
+        { who: "Markus", target: "Hallo Anna, ich heiße Markus. Freut mich!", es: "Hola Anna, me llamo Markus. ¡Mucho gusto!" },
+        { who: "Anna", target: "Woher kommst du?", es: "¿De dónde eres?" },
+        { who: "Markus", target: "Ich komme aus Berlin. Und du?", es: "Soy de Berlín. ¿Y tú?" },
+        { who: "Anna", target: "Ich komme aus Madrid. Was machst du beruflich?", es: "Soy de Madrid. ¿A qué te dedicas?" },
+        { who: "Markus", target: "Ich bin Ingenieur. Und du?", es: "Soy ingeniero. ¿Y tú?" },
+        { who: "Anna", target: "Ich bin Lehrerin. Es war schön, dich kennenzulernen!", es: "Soy profesora. ¡Fue un placer conocerte!" }
+      ],
+      questions: [
+        { q: "¿De dónde es Markus?", options: ["Madrid", "Berlín", "Múnich"], answer: 1 },
+        { q: "¿A qué se dedica Anna?", options: ["Ingeniera", "Profesora", "Médica"], answer: 1 },
+        { q: "¿Cómo se tratan entre ellos, formal o informal?", options: ["Formal (Sie)", "Informal (du)", "No queda claro"], answer: 1 }
+      ]
+    },
+    cloze: [
+      { id: "de-m21-cl1", before: "Ich ", blank: "heiße", after: " Anna.", es: "Me llamo Anna.", mode: "type" },
+      { id: "de-m21-cl2", before: "Woher ", blank: "kommst", after: " du?", es: "¿De dónde eres?", mode: "select", options: ["kommst", "kommt", "komme", "kommen"] },
+      { id: "de-m21-cl3", before: "Wie ", blank: "geht", after: " es dir?", es: "¿Cómo estás?", mode: "select", options: ["geht", "gehst", "gehe", "gehen"] },
+      { id: "de-m21-cl4", before: "Es war schön, dich ", blank: "kennenzulernen", after: "!", es: "¡Fue un placer conocerte!", mode: "type" }
+    ],
+    falseFriends: [
+      { es: "también", esMeaning: "igualmente / además", target: "also", targetMeaning: "entonces / pues (también se dice «auch»)" }
+    ]
+  });
+
 })();

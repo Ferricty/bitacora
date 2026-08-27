@@ -94,16 +94,31 @@ const TTS = {
     speechSynthesis.onvoiceschanged = load;
   },
   hasVoice(shortCode) { return this.voices.some(v => v.lang.toLowerCase().startsWith(shortCode.toLowerCase())); },
+  // Elige la mejor voz disponible, priorizando SIEMPRE voces locales (localService: true).
+  // Las voces de red (localService: false) exigen conexión: si no hay internet, speak()
+  // falla en silencio. Preferimos una voz local aunque el idioma no sea una coincidencia
+  // exacta, antes que una voz de red del idioma exacto.
+  pickVoice(fullLang, shortLang) {
+    const matches = (v, code) => v.lang.toLowerCase() === code.toLowerCase() || v.lang.toLowerCase().startsWith(code.toLowerCase());
+    const exactFull = this.voices.filter(v => v.lang.toLowerCase() === fullLang.toLowerCase());
+    const exactShort = this.voices.filter(v => matches(v, shortLang));
+    return (
+      exactFull.find(v => v.localService) ||
+      exactShort.find(v => v.localService) ||
+      exactFull[0] ||
+      exactShort[0] ||
+      null
+    );
+  },
   speak(text, fullLang, shortLang) {
     if (!this.supported) return { ok: false, reason: "unsupported" };
     try { speechSynthesis.cancel(); } catch (e) {}
     const utter = new SpeechSynthesisUtterance(text);
-    let voice = this.voices.find(v => v.lang.toLowerCase() === fullLang.toLowerCase());
-    if (!voice) voice = this.voices.find(v => v.lang.toLowerCase().startsWith(shortLang.toLowerCase()));
+    const voice = this.pickVoice(fullLang, shortLang);
     if (voice) { utter.voice = voice; utter.lang = voice.lang; } else { utter.lang = fullLang; }
     utter.rate = 0.88;
     speechSynthesis.speak(utter);
-    return { ok: true, hadVoice: !!voice };
+    return { ok: true, hadVoice: !!voice, offlineReady: !!(voice && voice.localService) };
   }
 };
 
@@ -153,7 +168,11 @@ function shuffle(arr) {
 function allCardsForLang(lang) {
   return lang.modules.flatMap(m => m.cards.map(c => ({ ...c, moduleId: m.id, moduleTitle: m.title })));
 }
-function dictFor(lang) { return lang.code === "fr" ? BITACORA_DICT_FR : BITACORA_DICT_PT; }
+function dictFor(lang) {
+  if (lang.code === "fr") return BITACORA_DICT_FR;
+  if (lang.code === "de") return BITACORA_DICT_DE;
+  return BITACORA_DICT_PT;
+}
 
 /* ---------------------------------------------------------- */
 /* Estado de la app                                             */
@@ -194,7 +213,7 @@ function getProgress() { return Storage.get("progress", { streak: 0, last: null 
 function checkForFact() {
   const p = getProgress();
   if (p.streak > 0 && p.streak % 2 === 0 && p.lastFactStreak !== p.streak) {
-    const codes = ["pt", "fr"];
+    const codes = ["pt", "fr", "de"];
     const pick = codes[Math.floor(Math.random() * codes.length)];
     const set = BITACORA_FACTS[pick];
     p.factIndex = p.factIndex || {};
@@ -288,7 +307,7 @@ function viewHome() {
       <h1 class="hero-title">Tu ruta del español<br>al portugués y al francés</h1>
     </section>
     <section class="lang-grid">${cards}</section>
-    <section class="install-hint" id="installHint" hidden>
+    <section class="install-hint" id="installHint" ${state.deferredInstallPrompt ? "" : "hidden"}>
       <p>Puedes instalar Bitácora en tu pantalla de inicio para abrirla como una app y usarla sin conexión.</p>
       <button class="btn btn-ghost" data-action="install">Instalar</button>
     </section>
@@ -431,9 +450,9 @@ function viewDictionary() {
       <button class="audio-btn audio-btn-sm" data-action="speak" data-text="${esc(e.word)}" aria-label="Escuchar">${icon("volume_2")}</button>
     </div>`).join("");
 
-  const sourceNote = lang.code === "fr"
-    ? "IPA real de open-dict-data/ipa-dict (MIT)."
-    : "IPA generado con tugaphone (Apache-2.0), al no existir un diccionario IPA abierto para portugués europeo.";
+  const sourceNote = lang.code === "pt"
+    ? "IPA generado con tugaphone (Apache-2.0), al no existir un diccionario IPA abierto para portugués europeo."
+    : "IPA real de open-dict-data/ipa-dict (MIT).";
 
   return `
     <div class="module-wrap" style="--accent: var(--${lang.code})">
@@ -699,7 +718,12 @@ async function onAction(e) {
   else if (action === "go-dict") { state.view = "dictionary"; state.dictQuery = ""; state.dictShown = 50; renderView(); }
   else if (action === "dict-more") { state.dictShown += 50; renderView(); }
   else if (action === "set-tab") { state.tab = el.dataset.tab; renderView(); }
-  else if (action === "speak") { TTS.speak(el.dataset.text, currentLang().speechLang, currentLang().speechFallback); }
+  else if (action === "speak") {
+    const result = TTS.speak(el.dataset.text, currentLang().speechLang, currentLang().speechFallback);
+    if (!navigator.onLine && !result.offlineReady) {
+      alert("Sin conexión y sin una voz " + currentLang().label + " instalada en el teléfono, el audio no puede reproducirse. Instala una voz offline en los ajustes de accesibilidad/texto a voz de tu Android.");
+    }
+  }
   else if (action === "reveal") { state.reviewRevealed = true; renderView(); }
   else if (action === "reveal-read") { state.readRevealed = true; renderView(); }
   else if (action === "restart-review") { state._reviewInit = false; state.reviewPos = 0; renderView(); }
@@ -757,8 +781,7 @@ function init() {
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     state.deferredInstallPrompt = e;
-    const hint = document.getElementById("installHint");
-    if (hint) hint.hidden = false;
+    if (state.view === "home") renderView();
   });
 
   if ("serviceWorker" in navigator) {

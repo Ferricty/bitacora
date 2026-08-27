@@ -1,4 +1,4 @@
-const CACHE_NAME = "bitacora-v2";
+const CACHE_NAME = "bitacora-v3";
 const ASSETS = [
   "./",
   "./index.html",
@@ -8,6 +8,7 @@ const ASSETS = [
   "./js/data-extra.js",
   "./js/dict-fr.js",
   "./js/dict-pt.js",
+  "./js/dict-de.js",
   "./js/facts.js",
   "./js/app.js",
   "./assets/fonts/fraunces-variable.woff2",

@@ -6,18 +6,19 @@ abre un issue — es importante hacerlo bien.
 
 ## Datos lingüísticos
 
-**Listas de frecuencia de palabras (francés y portugués europeo)**
+**Listas de frecuencia de palabras (francés, portugués europeo y alemán)**
 Proyecto: [hermitdave/FrequencyWords](https://github.com/hermitdave/FrequencyWords)
 Licencia: MIT
 Uso: base para las 3000 palabras más usadas de cada idioma en la sección
 "Diccionario de frecuencia", y como guía para elegir vocabulario en los
 diálogos y ejercicios de completar frases.
 
-**Pronunciación IPA — francés**
+**Pronunciación IPA — francés y alemán**
 Proyecto: [open-dict-data/ipa-dict](https://github.com/open-dict-data/ipa-dict)
 Licencia: MIT
-Uso: transcripción fonética (IPA) real para las palabras francesas del
-diccionario de frecuencia (archivo `fr_FR.txt`, específico de Francia).
+Uso: transcripción fonética (IPA) real para las palabras francesas (archivo
+`fr_FR.txt`, específico de Francia) y alemanas (archivo `de.txt`) del
+diccionario de frecuencia.
 
 **Pronunciación IPA — portugués europeo**
 Proyecto: [TigreGotico/tugaphone](https://github.com/TigreGotico/tugaphone)

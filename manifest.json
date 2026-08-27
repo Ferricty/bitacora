@@ -1,7 +1,7 @@
 {
-  "name": "Bitácora — Portugués y Francés desde el español",
+  "name": "Bitácora — Portugués, Francés y Alemán desde el español",
   "short_name": "Bitácora",
-  "description": "Aprende portugués de Portugal y francés de Francia desde el español, sin conexión.",
+  "description": "Aprende portugués de Portugal, francés de Francia y alemán desde el español, sin conexión.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

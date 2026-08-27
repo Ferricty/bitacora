@@ -208,6 +208,112 @@ const BITACORA_DATA = {
           ]
         }
       ]
+    },
+    de: {
+      code: "de",
+      label: "Deutsch",
+      country: "Alemania",
+      flagShort: "DE",
+      speechLang: "de-DE",
+      speechFallback: "de",
+      tagline: "El alemán de Alemania, desde cero",
+      bridgeNote:
+        "El alemán comparte menos vocabulario con el español que el portugués o el francés, así que el vocabulario " +
+        "cuesta más al principio. A cambio, la pronunciación es muy regular — casi siempre se lee tal como se escribe. " +
+        "El reto real está en los sustantivos con género y mayúscula, y en un orden de palabras distinto.",
+      pronunciation: [
+        { rule: "ch (tras a, o, u)", desc: "Sonido gutural, como una «j» española suave hecha en la garganta. «Buch» (libro) suena «buj»." },
+        { rule: "ch (tras e, i, ä, ö, ü)", desc: "Sonido más suave, entre «sh» y «j», con la lengua adelante. «Ich» (yo) suena algo como «ish» dicho suave." },
+        { rule: "ei", desc: "Se pronuncia «ai», nunca «ei» como en español. «Nein» (no) suena «náin»." },
+        { rule: "ie", desc: "Se pronuncia «i» larga. «Sie» (usted/ella) suena «sí»." },
+        { rule: "s antes de vocal", desc: "Suena como la «s» sonora inglesa (como una «z» suave). «Sie» empieza con ese sonido." },
+        { rule: "z", desc: "Siempre suena «ts», nunca como en español. «Zeit» (tiempo) suena «tsáit»." },
+        { rule: "v", desc: "Suena como «f». «Vater» (padre) suena «fáter»." },
+        { rule: "w", desc: "Suena como la «v» española/inglesa. «Wasser» (agua) suena «váser»." },
+        { rule: "sustantivos con mayúscula", desc: "Todos los sustantivos se escriben siempre con mayúscula inicial, en cualquier posición de la frase — no es un error, es la norma." }
+      ],
+      modules: [
+        {
+          id: "de-m1",
+          num: 1,
+          title: "Erste Schritte",
+          subtitle: "Saludos, cortesía y números",
+          cards: [
+            { id: "de-m1-c01", es: "hola", target: "hallo", phon: "JÁ-lo" },
+            { id: "de-m1-c02", es: "buenos días", target: "guten Morgen", phon: "GÚ-ten MOR-guen" },
+            { id: "de-m1-c03", es: "buenas tardes", target: "guten Tag", phon: "GÚ-ten TAK", note: "Literalmente «buen día»; se usa durante todo el día, no solo por la tarde." },
+            { id: "de-m1-c04", es: "buenas noches (al saludar)", target: "guten Abend", phon: "GÚ-ten Á-bent" },
+            { id: "de-m1-c05", es: "buenas noches (al dormir)", target: "gute Nacht", phon: "GÚ-te NAJT" },
+            { id: "de-m1-c06", es: "adiós", target: "auf Wiedersehen", phon: "auf VÍ-der-seen", note: "Formal. En el día a día se usa más «tschüss»." },
+            { id: "de-m1-c07", es: "chao, nos vemos", target: "tschüss", phon: "chüs", note: "La forma informal más común de despedirse." },
+            { id: "de-m1-c08", es: "por favor", target: "bitte", phon: "BÍ-te", note: "También sirve como «de nada» y como «aquí tienes»." },
+            { id: "de-m1-c09", es: "gracias", target: "danke", phon: "DÁN-ke" },
+            { id: "de-m1-c10", es: "muchas gracias", target: "danke schön", phon: "DÁN-ke shön" },
+            { id: "de-m1-c11", es: "de nada", target: "bitte schön", phon: "BÍ-te shön" },
+            { id: "de-m1-c12", es: "perdón, disculpe", target: "Entschuldigung", phon: "ent-SHUL-di-gung", note: "Palabra larga pero muy usada; también sirve para llamar la atención de alguien." },
+            { id: "de-m1-c13", es: "sí", target: "ja", phon: "iá" },
+            { id: "de-m1-c14", es: "no", target: "nein", phon: "náin" },
+            { id: "de-m1-c15", es: "¿cómo estás?", target: "wie geht es dir?", phon: "vi guéit es dir", note: "Forma cercana (tú). Formal: «wie geht es Ihnen?»." },
+            { id: "de-m1-c16", es: "bien, gracias", target: "gut, danke", phon: "gut, DÁN-ke" },
+            { id: "de-m1-c17", es: "¿cómo te llamas?", target: "wie heißt du?", phon: "vi jáist du" },
+            { id: "de-m1-c18", es: "me llamo...", target: "ich heiße...", phon: "ish JÁI-se" },
+            { id: "de-m1-c19", es: "mucho gusto", target: "freut mich", phon: "fróit mish" },
+            { id: "de-m1-c20", es: "¿hablas español?", target: "sprichst du Spanisch?", phon: "shprijst du SHPÁ-nish" },
+            { id: "de-m1-c21", es: "no entiendo", target: "ich verstehe nicht", phon: "ish fer-SHTÉ-e nisht" },
+            { id: "de-m1-c22", es: "¿puede repetir?", target: "können Sie das wiederholen?", phon: "KÖ-nen si das vi-der-JÓ-len" },
+            { id: "de-m1-c23", es: "lo siento", target: "es tut mir leid", phon: "es tut mir láit" },
+            { id: "de-m1-c24", es: "bienvenido/a", target: "willkommen", phon: "vil-KÓ-men" },
+            { id: "de-m1-c25", es: "salud (al brindar)", target: "prost", phon: "prost" },
+            { id: "de-m1-c26", es: "buen provecho", target: "guten Appetit", phon: "GÚ-ten a-pe-TIT" },
+            { id: "de-m1-c27", es: "agua", target: "Wasser", phon: "VÁ-ser" },
+            { id: "de-m1-c28", es: "café", target: "Kaffee", phon: "ka-FÉ" },
+            { id: "de-m1-c29", es: "la cuenta, por favor", target: "die Rechnung, bitte", phon: "di REJ-nung, BÍ-te" },
+            { id: "de-m1-c30", es: "¿cuánto cuesta?", target: "wie viel kostet das?", phon: "vi fil KÓS-tet das" },
+            { id: "de-m1-c31", es: "no hablo alemán", target: "ich spreche kein Deutsch", phon: "ish SHPRÉ-je káin dóich" },
+            { id: "de-m1-c32", es: "cero", target: "null", phon: "nul" },
+            { id: "de-m1-c33", es: "uno", target: "eins", phon: "áins" },
+            { id: "de-m1-c34", es: "dos", target: "zwei", phon: "tsváí" },
+            { id: "de-m1-c35", es: "tres", target: "drei", phon: "dráí" },
+            { id: "de-m1-c36", es: "cuatro", target: "vier", phon: "fir" },
+            { id: "de-m1-c37", es: "cinco", target: "fünf", phon: "fünf" },
+            { id: "de-m1-c38", es: "seis", target: "sechs", phon: "seks" },
+            { id: "de-m1-c39", es: "siete", target: "sieben", phon: "SÍ-ben" },
+            { id: "de-m1-c40", es: "ocho", target: "acht", phon: "ajt" },
+            { id: "de-m1-c41", es: "nueve", target: "neun", phon: "nóin" },
+            { id: "de-m1-c42", es: "diez", target: "zehn", phon: "tsen" }
+          ],
+          dialogue: {
+            title: "Im Café",
+            context: "Pides un café en Berlín.",
+            lines: [
+              { who: "Kellner", target: "Guten Tag! Was möchten Sie?", es: "Buenos días. ¿Qué desea?" },
+              { who: "Sie", target: "Guten Tag. Einen Kaffee, bitte.", es: "Buenos días. Un café, por favor." },
+              { who: "Kellner", target: "Sonst noch etwas?", es: "¿Algo más?" },
+              { who: "Sie", target: "Nein, danke. Wie viel kostet das?", es: "No, gracias. ¿Cuánto cuesta?" },
+              { who: "Kellner", target: "Das macht zwei Euro.", es: "Son dos euros." },
+              { who: "Sie", target: "Danke! Auf Wiedersehen.", es: "¡Gracias! Adiós." }
+            ],
+            questions: [
+              { q: "¿Qué pide el cliente?", options: ["Un té", "Un café", "Un agua"], answer: 1 },
+              { q: "¿Cuánto cuesta?", options: ["Un euro", "Dos euros", "Tres euros"], answer: 1 },
+              { q: "¿Cómo se despide?", options: ["Tschüss", "Auf Wiedersehen", "Gute Nacht"], answer: 1 }
+            ]
+          },
+          falseFriends: [
+            { es: "el mapa", esMeaning: "map, plano de un lugar", target: "die Mappe", targetMeaning: "carpeta de documentos (mapa se dice «die Karte»)" },
+            { es: "el gift", esMeaning: "no existe en español, pero suena a «regalo» en inglés", target: "das Gift", targetMeaning: "¡veneno! (regalo se dice «das Geschenk»)" },
+            { es: "el chef", esMeaning: "cocinero jefe", target: "der Chef", targetMeaning: "jefe de trabajo en general, no necesariamente cocinero" },
+            { es: "el bald", esMeaning: "no existe en español, suena a «calvo» en inglés", target: "bald", targetMeaning: "¡pronto! (calvo se dice «kahl»)" },
+            { es: "sensible", esMeaning: "que se emociona con facilidad", target: "sensibel", targetMeaning: "sí coincide, pero cuidado: «sensato» se dice «vernünftig», no «sensibel»" }
+          ],
+          cloze: [
+            { id: "de-m1-cl1", before: "Ich ", blank: "spreche", after: " kein Deutsch.", es: "Yo no hablo alemán.", mode: "select", options: ["spreche", "bin", "habe", "gehe"] },
+            { id: "de-m1-cl2", before: "", blank: "Danke", after: " schön für Ihre Hilfe.", es: "Muchas gracias por su ayuda.", mode: "type" },
+            { id: "de-m1-cl3", before: "Wie ", blank: "geht", after: " es dir?", es: "¿Cómo estás?", mode: "type" },
+            { id: "de-m1-cl4", before: "Die Rechnung, ", blank: "bitte", after: ".", es: "La cuenta, por favor.", mode: "select", options: ["bitte", "nein", "gut", "sehr"] }
+          ]
+        }
+      ]
     }
   }
 };
