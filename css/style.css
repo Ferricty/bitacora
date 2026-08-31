@@ -125,6 +125,18 @@ input { font-family: inherit; }
 .lang-progress-bar { height: 6px; background: var(--paper-line); border-radius: 999px; overflow: hidden; }
 .lang-progress-fill { height: 100%; background: var(--accent); }
 .lang-progress-text { display: block; margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-2); }
+.lang-progress-secondary { margin-top: 10px; opacity: 0.72; }
+.lang-progress-secondary .lang-progress-bar { height: 4px; }
+
+.module-card.is-complete .module-card-icon { color: var(--accent); }
+
+.task-progress { margin: 4px 0 18px; }
+.task-checklist { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; padding: 0; list-style: none; }
+.task-item { display: flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-2); }
+.task-item-check { display: inline-flex; width: 15px; height: 15px; align-items: center; justify-content: center; border-radius: 999px; border: 1.5px solid var(--paper-line); flex-shrink: 0; }
+.task-item-check .icon { width: 10px; height: 10px; }
+.task-item.is-done { color: var(--ink); }
+.task-item.is-done .task-item-check { background: var(--accent); border-color: var(--accent); color: var(--paper-2); }
 
 .install-hint {
   margin-top: 24px; padding: 14px 16px; border: 1px dashed var(--paper-line); border-radius: var(--radius);

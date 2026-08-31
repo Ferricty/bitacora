@@ -83,6 +83,72 @@ const SRS = {
 };
 
 /* ---------------------------------------------------------- */
+/* Progreso de tareas por módulo (aprender/hablar/leer/escribir) */
+/* Cada tarea se marca sola al completarse con éxito; de ahí     */
+/* salen las dos barras de progreso (tareas del módulo, y        */
+/* módulos completados dentro del idioma).                      */
+/* ---------------------------------------------------------- */
+const TaskProgress = {
+  getAll() { return Storage.get("tasks", {}); },
+  saveAll(all) { Storage.set("tasks", all); },
+  _entry(all, moduleId) { return all[moduleId] || { speak: {}, read: {}, write: {} }; },
+  get(moduleId) { return this._entry(this.getAll(), moduleId); },
+  markSpeak(moduleId, idx) {
+    const all = this.getAll();
+    const m = this._entry(all, moduleId);
+    m.speak[idx] = true;
+    all[moduleId] = m;
+    this.saveAll(all);
+  },
+  markReadCorrect(moduleId, qi) {
+    const all = this.getAll();
+    const m = this._entry(all, moduleId);
+    m.read[qi] = true;
+    all[moduleId] = m;
+    this.saveAll(all);
+  },
+  markWriteCorrect(moduleId, itemId) {
+    const all = this.getAll();
+    const m = this._entry(all, moduleId);
+    m.write[itemId] = true;
+    all[moduleId] = m;
+    this.saveAll(all);
+  }
+};
+
+function moduleTaskStatus(mod) {
+  const tp = TaskProgress.get(mod.id);
+
+  const learnTotal = mod.cards.length;
+  const learnDone = learnTotal > 0 && mod.cards.every(c => SRS.stateFor(c.id).seen);
+
+  const speakTotal = mod.dialogue ? mod.dialogue.lines.length : 0;
+  const speakDone = speakTotal > 0 && Object.keys(tp.speak).length >= speakTotal;
+
+  const readTotal = mod.dialogue ? mod.dialogue.questions.length : 0;
+  const readDone = readTotal > 0 && Object.keys(tp.read).length >= readTotal;
+
+  const writeTotal = writeItems(mod).length;
+  const writeDone = writeTotal > 0 && Object.keys(tp.write).length >= writeTotal;
+
+  const tasks = [
+    { key: "learn", label: "Aprender", icon: "book_open", total: learnTotal, done: learnDone },
+    { key: "speak", label: "Hablar", icon: "mic", total: speakTotal, done: speakDone },
+    { key: "read", label: "Leer", icon: "book_open", total: readTotal, done: readDone },
+    { key: "write", label: "Escribir", icon: "check", total: writeTotal, done: writeDone }
+  ].filter(t => t.total > 0);
+
+  const doneCount = tasks.filter(t => t.done).length;
+  return { tasks, doneCount, total: tasks.length, complete: tasks.length > 0 && doneCount === tasks.length };
+}
+
+function langModuleProgress(lang) {
+  const total = lang.modules.length;
+  const done = lang.modules.filter(m => moduleTaskStatus(m).complete).length;
+  return { done, total };
+}
+
+/* ---------------------------------------------------------- */
 /* Texto a voz — usa las voces ya instaladas en el dispositivo  */
 /* ---------------------------------------------------------- */
 const TTS = {
@@ -286,6 +352,8 @@ function viewHome() {
     const allCards = allCardsForLang(lang);
     const totalSeen = allCards.filter(c => SRS.stateFor(c.id).seen).length;
     const pct = Math.round((totalSeen / allCards.length) * 100);
+    const mp = langModuleProgress(lang);
+    const modPct = Math.round((mp.done / mp.total) * 100);
     return `
       <button class="lang-card" data-action="open-lang" data-lang="${lang.code}" style="--accent: var(--${lang.code})">
         <div class="lang-card-top">
@@ -294,8 +362,12 @@ function viewHome() {
         </div>
         <p class="lang-tagline">${esc(lang.tagline)}</p>
         <div class="lang-progress">
+          <div class="lang-progress-bar"><div class="lang-progress-fill" style="width:${modPct}%"></div></div>
+          <span class="lang-progress-text">${mp.done}/${mp.total} módulos completados</span>
+        </div>
+        <div class="lang-progress lang-progress-secondary">
           <div class="lang-progress-bar"><div class="lang-progress-fill" style="width:${pct}%"></div></div>
-          <span class="lang-progress-text">${totalSeen}/${allCards.length} palabras · ${lang.modules.length} módulos</span>
+          <span class="lang-progress-text">${totalSeen}/${allCards.length} palabras vistas</span>
         </div>
       </button>`;
   }).join("");
@@ -323,17 +395,17 @@ function viewLangHome() {
   const dict = dictFor(lang);
 
   const modules = lang.modules.map(m => {
-    const st = moduleStats(m);
-    const pct = Math.round((st.seen / st.total) * 100);
+    const ts = moduleTaskStatus(m);
+    const pct = Math.round((ts.doneCount / ts.total) * 100);
     return `
-      <button class="module-card" data-action="open-module" data-module="${m.id}">
-        <span class="module-card-icon">${icon(moduleIcon(m.num))}</span>
+      <button class="module-card ${ts.complete ? "is-complete" : ""}" data-action="open-module" data-module="${m.id}">
+        <span class="module-card-icon">${ts.complete ? icon("check") : icon(moduleIcon(m.num))}</span>
         <span class="module-card-body">
           <span class="module-card-title">${m.num}. ${esc(m.title)}</span>
           <span class="module-card-sub">${esc(m.subtitle)}</span>
           <span class="module-card-bar"><span style="width:${pct}%"></span></span>
         </span>
-        <span class="module-card-count">${st.seen}/${st.total}</span>
+        <span class="module-card-count">${ts.doneCount}/${ts.total}</span>
       </button>`;
   }).join("");
 
@@ -372,9 +444,13 @@ function viewLangHome() {
 function viewReview() {
   const lang = currentLang();
   if (!state._reviewInit) {
-    const all = allCardsForLang(lang);
+    const scopeId = state.reviewScopeModule;
+    const scopedMod = scopeId ? lang.modules.find(m => m.id === scopeId) : null;
+    const all = scopedMod
+      ? scopedMod.cards.map(c => ({ ...c, moduleId: scopedMod.id, moduleTitle: scopedMod.title }))
+      : allCardsForLang(lang);
     const due = all.filter(c => SRS.isDue(c.id));
-    const fresh = all.filter(c => SRS.isNew(c.id)).slice(0, 15);
+    const fresh = all.filter(c => SRS.isNew(c.id)).slice(0, scopedMod ? all.length : 15);
     state.reviewQueue = shuffle([...due, ...fresh]);
     state.reviewPos = 0; state.reviewRevealed = false; state._reviewInit = true;
   }
@@ -479,6 +555,20 @@ function viewModule() {
     `<button class="tab-btn ${state.tab === id ? "is-active" : ""}" data-action="set-tab" data-tab="${id}">${label}</button>`
   ).join("");
 
+  const ts = moduleTaskStatus(mod);
+  const taskPct = Math.round((ts.doneCount / ts.total) * 100);
+  const taskChecklist = `
+    <div class="task-progress">
+      <div class="lang-progress-bar"><div class="lang-progress-fill" style="width:${taskPct}%"></div></div>
+      <ul class="task-checklist">
+        ${ts.tasks.map(t => `
+          <li class="task-item ${t.done ? "is-done" : ""}">
+            <span class="task-item-check">${t.done ? icon("check") : ""}</span>
+            <span class="task-item-label">${esc(t.label)}</span>
+          </li>`).join("")}
+      </ul>
+    </div>`;
+
   let body = "";
   if (state.tab === "learn") body = tabLearn(lang, mod);
   else if (state.tab === "speak") body = tabSpeak(lang, mod);
@@ -490,10 +580,11 @@ function viewModule() {
       <div class="module-header">
         <button class="back-btn" data-action="go-back" aria-label="Volver">${icon("arrow_left")}</button>
         <div>
-          <p class="module-eyebrow">${lang.label} · Módulo ${mod.num}</p>
+          <p class="module-eyebrow">${lang.label} · Módulo ${mod.num}${ts.complete ? " · Completado" : ""}</p>
           <h2 class="module-title">${esc(mod.title)}</h2>
         </div>
       </div>
+      ${taskChecklist}
       <nav class="tabbar">${tabBtns}</nav>
       <div class="tab-body">${body}</div>
     </div>
@@ -540,7 +631,7 @@ function tabLearn(lang, mod) {
       <summary>⚠️ Falsos amigos con el español</summary>
       <div class="ff-list">${ff}</div>
     </details>
-    <button class="btn btn-primary btn-block" data-action="go-review">Repasar estas tarjetas →</button>
+    <button class="btn btn-primary btn-block" data-action="go-review" data-module="${mod.id}">Repasar estas tarjetas →</button>
   `;
 }
 
@@ -714,7 +805,11 @@ async function onAction(e) {
     state.speakIdx = 0; state.writeIdx = 0; state.writeChecked = null; state.readRevealed = false;
     renderView();
   }
-  else if (action === "go-review") { state.view = "review"; state._reviewInit = false; renderView(); }
+  else if (action === "go-review") {
+    state.view = "review"; state._reviewInit = false;
+    state.reviewScopeModule = el.dataset.module || null;
+    renderView();
+  }
   else if (action === "go-dict") { state.view = "dictionary"; state.dictQuery = ""; state.dictShown = 50; renderView(); }
   else if (action === "dict-more") { state.dictShown += 50; renderView(); }
   else if (action === "set-tab") { state.tab = el.dataset.tab; renderView(); }
@@ -734,7 +829,11 @@ async function onAction(e) {
     state.reviewPos += 1; state.reviewRevealed = false;
     renderView();
   }
-  else if (action === "next-speak") { state.speakIdx += 1; Recorder.lastUrl = null; renderView(); }
+  else if (action === "next-speak") {
+    const mod = currentModule();
+    TaskProgress.markSpeak(mod.id, state.speakIdx % mod.dialogue.lines.length);
+    state.speakIdx += 1; Recorder.lastUrl = null; renderView();
+  }
   else if (action === "toggle-record") {
     if (!state.recording) {
       try { await Recorder.start(); state.recording = true; renderView(); }
@@ -745,23 +844,32 @@ async function onAction(e) {
     const mod = currentModule();
     const q = mod.dialogue.questions[parseInt(el.dataset.qi, 10)];
     const oi = parseInt(el.dataset.oi, 10);
+    const isCorrect = oi === q.answer;
     const fb = document.getElementById("qf-" + el.dataset.qi);
-    fb.innerHTML = oi === q.answer
+    fb.innerHTML = isCorrect
       ? icon("check") + " Correcto."
       : icon("x") + ` Incorrecto. La respuesta correcta es: <strong>${esc(q.options[q.answer])}</strong>`;
-    fb.className = "quiz-feedback " + (oi === q.answer ? "is-correct" : "is-wrong");
+    fb.className = "quiz-feedback " + (isCorrect ? "is-correct" : "is-wrong");
+    if (isCorrect) TaskProgress.markReadCorrect(mod.id, el.dataset.qi);
   }
   else if (action === "check-write") {
+    const mod = currentModule();
+    const items = writeItems(mod);
+    const item = items[state.writeIdx % items.length];
     const val = document.getElementById("writeInput").value;
     const expected = el.dataset.expected;
     const correct = normalize(val) === normalize(expected);
     state.writeChecked = { value: val, correct };
+    if (correct) TaskProgress.markWriteCorrect(mod.id, item.id);
     renderView();
   }
   else if (action === "select-cloze") {
-    const items = writeItems(currentModule());
+    const mod = currentModule();
+    const items = writeItems(mod);
     const item = items[state.writeIdx % items.length];
-    state.writeChecked = { value: el.dataset.value, correct: el.dataset.value === item.blank };
+    const correct = el.dataset.value === item.blank;
+    state.writeChecked = { value: el.dataset.value, correct };
+    if (correct) TaskProgress.markWriteCorrect(mod.id, item.id);
     renderView();
   }
   else if (action === "next-write") { state.writeIdx += 1; state.writeChecked = null; renderView(); }
